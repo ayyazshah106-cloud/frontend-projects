@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px auto;
+  background-color: antiquewhite;
+  padding: 2%;
+  border-radius: 5px;
+}
+form h1{
+align-self: center;
+}
+.row{
+  display: flex;
+  gap: 20px;
+}
+.row div{
+  flex: 1;
+}
+fieldset{
+  padding: 15px;
+}
+
+label{
+  display: block;
+  margin-right: 10px;
+}
+input,select{
+  width: 100%;
+  margin-right: 10px;
+}
+.inline{
+  width: auto;
+ 
+
+}

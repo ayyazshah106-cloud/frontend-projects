@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Application_form.css">
+  <title>Application Form</title>
+</head>
+
+<body>
+  <form action="">
+    <h1>Application Form</h1>
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <div class="row">
+        <div class="First_name"> <label for="">First name</label>
+          <input type="text" autocomplete="off">
+        </div>
+        <div class="Last_Name"><label for="">Last name</label>
+          <input type="text" autocomplete="off">
+        </div>
+      </div>
+
+      <label for="">Email</label>
+      <input type="email" placeholder="Enter Your Email">
+
+
+      <label for="">Pasword</label>
+      <input type="Pasword" placeholder="Enter Your Pasword">
+
+      <label for="">Phone Number</label>
+      <input type="number" placeholder="Enter Your Email">
+
+      <label for="">date of Brith</label>
+      <input type="date" placeholder="Enter Your Email">
+
+      <label for="">Gender</label>
+      <input class="inline" type="radio" name="male" id="">Male
+      <input class="inline" type="radio" name="male" id="">Female
+      <input class="inline" type="radio" name="male" id="">Other
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Education</legend>
+      <label for="">Highest Qualification</label>
+      <select name="" id="">
+        <option value="">Select</option>
+        <option value="">Matric</option>
+        <option value="">Intermediate</option>
+        <option value="">Bachelors</option>
+        <option value="">Masters</option>
+      </select>
+
+
+      <label for="">Field of Study</label>
+
+
+      <select name="" id="">
+        <optgroup label="computer science">
+          <option value="">
+            Select
+          </option>
+          <option value="">
+            Web Development
+          </option>
+          <option value="">
+            Ai/Machine Learning
+          </option>
+          <option value="">
+            Digital Marketing
+          </option>
+        </optgroup>
+
+        <optgroup label="Engineering">
+          <option value="">Machanical Engineering</option>
+          <option value="">Electrical Engineering</option>
+          <option value="">Bio-Medical Engineering</option>
+        </optgroup>
+      </select>
+
+      <label for="">Skills</label>
+      <input class="inline" type="checkbox" name="" id="">Web Development
+      <input class="inline" type="checkbox" name="" id="">UI/UX Designer
+      <input class="inline" type="checkbox" name="" id="">Digital Marketing
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Upload & Preferences</legend>
+      <input type="file" name="" id="">
+      <label for="">Available Time</label>
+      <input type="time">
+      <label for="">Experience Level(0-10)</label>
+      <input type="range" min="0" max="10">
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Information</legend>
+      <label for="">About Yourself</label>
+      <textarea name="" id="">Write something about yourself</textarea>
+
+      <label for=""> <input class="inline" type="checkbox" name="" id="">
+        I agree to terms & conditions</label>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+    <button type="reset">reset</button>
+
+  </form>
+</body>
+
+</html>
