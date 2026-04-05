@@ -5,7 +5,7 @@
   }
 
   form {
-    max-width: 800px;
+  max-width: 800px;
     margin: auto;
     background: #ffffff;
     padding: 25px;
@@ -13,6 +13,9 @@
       box-shadow: 2px 3px 19px rgba(0, 0, 0, 0.5);
   }
 
+  h1{
+  text-align: center;
+  }
   h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -38,9 +41,15 @@
   input,
   select,
   textarea {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-top: 5px;
+    
+  }
+  input:focus{
+     outline: none;
+  border: 1px solid #999;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
   }
 
   .inline {
@@ -49,16 +58,51 @@
   }
 
   .row {
+    width: 97.5%;
     display: flex;
     gap: 20px;
   }
 
+  
   .row div {
     flex: 1;
   }
 
-  button {
-    padding: 10px 20px;
+  .submit {
     font-size: 16px;
+    color: #ffffff;
     margin-top: 10px;
+    padding: 10px 20px;
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 4px;
+
+ 
   }
+  .reset{
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: 4px;
+ border: 1px solid #2A8387;
+  color: #FFFFFF;
+  
+  
+  }
+@media (max-width:500px){
+body {
+  padding: 0;
+}
+form {
+  padding: 25px 15px;
+  box-shadow:none
+}
+}
+
+
+
+
+

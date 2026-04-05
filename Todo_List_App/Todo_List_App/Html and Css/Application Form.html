@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Application_form.css">
-  <title>Application Form</title>
+  <title>Student Regestration Form</title>
 </head>
 
 <body>
   <form action="">
-    <h1>Application Form</h1>
+    <h1>Registration Form</h1>
     <fieldset>
       <legend>Personal Information</legend>
 
       <div class="row">
         <div class="First_name"> <label for="">First name</label>
-          <input type="text" autocomplete="off">
+          <input type="text" autocomplete="off" placeholder="First Name ">
         </div>
         <div class="Last_Name"><label for="">Last name</label>
-          <input type="text" autocomplete="off">
+          <input type="text" autocomplete="off" placeholder="Last Name">
         </div>
       </div>
 
@@ -101,14 +101,14 @@
     <fieldset>
       <legend>Additional Information</legend>
       <label for="">About Yourself</label>
-      <textarea name="" id="">Write something about yourself</textarea>
+      <textarea placeholder="Write something about yourself" name="" id=""></textarea>
 
       <label for=""> <input class="inline" type="checkbox" name="" id="">
         I agree to terms & conditions</label>
     </fieldset>
 
-    <button type="submit">Submit</button>
-    <button type="reset">reset</button>
+    <button class="submit" type="submit">Submit</button>
+    <button class="reset" type="reset">reset</button>
 
   </form>
 </body>
