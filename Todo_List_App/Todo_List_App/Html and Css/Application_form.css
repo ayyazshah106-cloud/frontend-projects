@@ -1,43 +1,64 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 30px;
+  }
 
-form{
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 50px auto;
-  background-color: antiquewhite;
-  padding: 2%;
-  border-radius: 5px;
-}
-form h1{
-align-self: center;
-}
-.row{
-  display: flex;
-  gap: 20px;
-}
-.row div{
-  flex: 1;
-}
-fieldset{
-  padding: 15px;
-}
+  form {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+      box-shadow: 2px 3px 19px rgba(0, 0, 0, 0.5);
+  }
 
-label{
-  display: block;
-  margin-right: 10px;
-}
-input,select{
-  width: 100%;
-  margin-right: 10px;
-}
-.inline{
-  width: auto;
- 
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-}
+  fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+  }
+
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+
+  .inline {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .row div {
+    flex: 1;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
