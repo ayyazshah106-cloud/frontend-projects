@@ -9,108 +9,126 @@
 </head>
 
 <body>
-  <form action="">
+  <form action="submit">
     <h1>Registration Form</h1>
     <fieldset>
       <legend>Personal Information</legend>
 
       <div class="row">
         <div class="First_name"> <label for="">First name</label>
-          <input type="text" autocomplete="off" placeholder="First Name ">
+          <input class="form_holder" id="First_name" type="text" autocomplete="off" placeholder="First Name ">
+          <div class="error" id="Firstname_error"></div>
         </div>
         <div class="Last_Name"><label for="">Last name</label>
-          <input type="text" autocomplete="off" placeholder="Last Name">
+          <input class="form_holder" id="Last_Name" type="text" autocomplete="off" placeholder="Last Name">
+          <div class="error" id="Lastname_error"></div>
         </div>
       </div>
 
       <label for="">Email</label>
-      <input type="email" placeholder="Enter Your Email">
+      <input class="form_holder" id="email" type="email" placeholder="Enter Your Email">
+      <div class="error" id="email_error"></div>
 
 
       <label for="">Pasword</label>
-      <input type="Pasword" placeholder="Enter Your Pasword">
+      <input class="form_holder" id="password" type="Pasword" placeholder="Enter Your Pasword">
+      <div class="error" id="passoword_error"></div>
 
       <label for="">Phone Number</label>
-      <input type="number" placeholder="Enter Your Email">
+      <input class="form_holder" id="phone_number" type="number" placeholder="Enter Your Email">
+      <div class="error" id="phone_error"></div>
+
 
       <label for="">date of Brith</label>
-      <input type="date" placeholder="Enter Your Email">
+      <input class="form_holder" id="date_brith" type="date" placeholder="Enter Your Email">
+      <div class="error" id="date_error"></div>
 
       <label for="">Gender</label>
-      <input class="inline" type="radio" name="male" id="">Male
-      <input class="inline" type="radio" name="male" id="">Female
-      <input class="inline" type="radio" name="male" id="">Other
+      <input id="Gender" class="inline form_holder" type="radio" name="male">Male
+      <input id="Gender" class="inline form_holder" type="radio" name="male">Female
+      <input id="Gender" class="inline form_holder" type="radio" name="male">Other
+      <div class="error" id="gender_error"></div>
     </fieldset>
 
 
     <fieldset>
       <legend>Education</legend>
       <label for="">Highest Qualification</label>
-      <select name="" id="">
-        <option value="">Select</option>
-        <option value="">Matric</option>
-        <option value="">Intermediate</option>
-        <option value="">Bachelors</option>
-        <option value="">Masters</option>
+      <select>
+        <option>Select</option>
+        <option>Matric</option>
+        <option>Intermediate</option>
+        <option>Bachelors</option>
+        <option>Masters</option>
       </select>
-
+      <div class="error" id="education_error"></div>
 
       <label for="">Field of Study</label>
 
 
-      <select name="" id="">
-        <option value="">
+      <select>
+        <option>
           Select
         </option>
         <optgroup label="computer science">
 
-          <option value="">
+          <option>
             Web Development
           </option>
-          <option value="">
+          <option>
             Ai/Machine Learning
           </option>
-          <option value="">
+          <option>
             Digital Marketing
           </option>
         </optgroup>
 
         <optgroup label="Engineering">
-          <option value="">Machanical Engineering</option>
-          <option value="">Electrical Engineering</option>
-          <option value="">Bio-Medical Engineering</option>
+          <option>Machanical Engineering</option>
+          <option>Electrical Engineering</option>
+          <option>Bio-Medical Engineering</option>
         </optgroup>
       </select>
+      <div class="error" id="study_error"></div>
 
       <label for="">Skills</label>
-      <input class="inline" type="checkbox" name="" id="">Web Development
-      <input class="inline" type="checkbox" name="" id="">UI/UX Designer
-      <input class="inline" type="checkbox" name="" id="">Digital Marketing
+      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">Web Development
+      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">UI/UX Designer
+      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">Digital Marketing
+      <div class="error" id="skills_error"></div>
     </fieldset>
 
 
     <fieldset>
       <legend>Upload & Preferences</legend>
-      <input type="file" name="" id="">
+      <input id="file_upload" class="inline form_holder" type="file" name="" id="">
+      <div class="error" id="upload_error"></div>
       <label for="">Available Time</label>
-      <input type="time">
+      <input id="time" class="inline form_holder" type="time">
+      <div class="error" id="time_error"></div>
       <label for="">Experience Level(0-10)</label>
-      <input type="range" min="0" max="10">
+      <input id="range" class="inline form_holder" type="range" min="0" max="10">
+      <div class="error" id="level_error"></div>
     </fieldset>
 
     <fieldset>
       <legend>Additional Information</legend>
       <label for="">About Yourself</label>
-      <textarea placeholder="Write something about yourself" name="" id=""></textarea>
+      <textarea placeholder="Write something about yourself" name="" id="textarea"></textarea>
+      <div class="error" id="textarea_error"></div>
 
-      <label for=""> <input class="inline" type="checkbox" name="" id="">
+      <label for=""> <input id="term_and_condition" class="inline form_holder" type="checkbox" name="">
         I agree to terms & conditions</label>
+      <div class="error" id="term_error"></div>
     </fieldset>
 
-    <button class="submit" type="submit">Submit</button>
-    <button class="reset" type="reset">reset</button>
+    <button id="submit" class="submit" type="submit">Submit</button>
+    <div class="error" id="sumbit_error"></div>
+    <button id="reset" class="reset" type="reset">reset</button>
+    <div class="error" id="reset_error"></div>
 
   </form>
+  <script src="Application Form.js"></script>
 </body>
 
 </html>

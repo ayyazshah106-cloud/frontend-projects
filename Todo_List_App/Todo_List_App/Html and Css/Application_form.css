@@ -33,6 +33,7 @@
   }
 
   label {
+    width: fit-content;
     display: block;
     margin-top: 12px;
     font-weight: 600;
@@ -46,11 +47,11 @@
     margin-top: 5px;
     
   }
-  input:focus{
+  input:focus,select:focus{
      outline: none;
   border: 1px solid #999;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
-  }
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  } 
 
   .inline {
     width: auto;
@@ -96,10 +97,24 @@
 body {
   padding: 0;
 }
+h1{
+  font-size: 30px;
+}
 form {
   padding: 25px 15px;
   box-shadow:none
 }
+.row {
+        flex-wrap: wrap;
+        width: 99.5%;
+        display: flex;
+        gap: 0px;
+      }
+
+
+        .row div {
+    width: 100%;
+  flex: none;}
 }
 
 
