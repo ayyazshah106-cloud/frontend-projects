@@ -11,10 +11,12 @@ const email = document.getElementById("email").value;
 const password = document.getElementById("password").value;
 
 
-const passworda_match = document.getElementById("password_match").value;
-console.log(passworda_match);
+const password_match = document.getElementById("password_match").value;
+
 const phoneNumber = document.getElementById("phone_number").value;
-const dateBirth = document.getElementById("date_brith");
+const dateBirth = document.getElementById("date_brith").value;
+console.log(dateBirth);
+
 
 const genderMale = document.getElementById("Gender"); // Note: HTML me sab radio ka same id hai, ideally unique ID deni chahiye
 const genderFemale = document.getElementById("Gender");
@@ -24,6 +26,7 @@ const Lastname_error = document.getElementById("Lastname_error");
 const email_error = document.getElementById("email_error");
 const passoword_error = document.getElementById("passoword_error");
 const notmatch_error = document.getElementById("notmatch_error");
+const date_error = document.getElementById("date_error");
 // const passoword_error = document.getElementById("phone_error");
 
 
@@ -47,34 +50,94 @@ const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 
 document.querySelectorAll('.error').forEach((Element) =>(Element.textContent=''));
+  let isvalid = true;
 
+// vailidate usreName    
+if(firstName == ''){
+   Firstname_error.textContent="Enter your first name";
+   isvalid = false; 
+}
 
-
-if(!firstNameRegex.test(firstName)){
+else if(!firstNameRegex.test(firstName)){
     Firstname_error.textContent="User name not valid";
+ isvalid = false;
 }
 
-if(!firstNameRegex.test(lastName)){
+if(lastName == ''){
+   Lastname_error.textContent="Enter your Last name";
+   isvalid = false; 
+}
+
+else if(!firstNameRegex.test(lastName)){
     Lastname_error.textContent="User name not valid";
+     isvalid = false;
 }
 
-if(!emailRegex.test(email)){
+if(email == ""){
+    email_error.textContent="Please Enter Your Email";
+     isvalid = false;
+}
+else if(!emailRegex.test(email)){
     email_error.textContent="Email not valid";
+     isvalid = false;
 }
 
-
-if(!phoneNumberRegex.test(phoneNumber)){
+if(phoneNumber == ""){
+     phone_error.textContent="Please Enter Your Phone Number";
+      isvalid = false;
+}
+else if(!phoneNumberRegex.test(phoneNumber)){
     phone_error.textContent="Phone number must be a valid Pakistani number starting with 03 or +92";
+     isvalid = false;
 }
-if(!passwordRegex.test(password)){
+
+if(password == ""){
+     passoword_error.textContent="Please Enter Your Password";
+      isvalid = false;
+}
+else if(!passwordRegex.test(password)){
     passoword_error.textContent="Password must be 8-20 characters and include uppercase, lowercase, number, and special character";
+    isvalid = false;
 }
+
+
 
 if(password !== password_match){
-    passoword_error.textContent="Password not match"
+  
     notmatch_error.textContent="Password not match";
 }
 
+
+
+
+    if (!dateBirth) {
+        date_error.textContent = "Please select your date of birth";
+        return;
+    }
+
+    const dob = new Date(dateBirth);
+    const today = new Date();
+
+    // Calculate age
+    let age = today.getFullYear() - dob.getFullYear();
+    const monthDiff = today.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--;
+    }
+
+    if (age < 18) {
+        date_error.textContent = "You must be 18 years or older";
+        isvalid = false;
+    }else {
+        date_error.textContent = ""; // clear error
+        alert("Valid DOB ✅"); // or submit your form here
+    }
+
+
+
+if (isvalid){
+    alert("Registration form Successful");
+}
 })
 
 
