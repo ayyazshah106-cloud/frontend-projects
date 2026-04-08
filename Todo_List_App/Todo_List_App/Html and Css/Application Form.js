@@ -15,18 +15,22 @@ const password_match = document.getElementById("password_match").value;
 
 const phoneNumber = document.getElementById("phone_number").value;
 const dateBirth = document.getElementById("date_brith").value;
-console.log(dateBirth);
+const genderRadios = document.getElementsByName("gender");
+    const genderError = document.getElementById("gender_error");
 
 
-const genderMale = document.getElementById("Gender"); // Note: HTML me sab radio ka same id hai, ideally unique ID deni chahiye
-const genderFemale = document.getElementById("Gender");
-const genderOther = document.getElementById("Gender");
+// const genders = document.querySelectorAll('input[name="gender"]');
+
+
 const Firstname_error = document.getElementById("Firstname_error");
 const Lastname_error = document.getElementById("Lastname_error");
 const email_error = document.getElementById("email_error");
 const passoword_error = document.getElementById("passoword_error");
 const notmatch_error = document.getElementById("notmatch_error");
 const date_error = document.getElementById("date_error");
+
+// const gender_error = document.getElementById("gender_error");
+
 // const passoword_error = document.getElementById("phone_error");
 
 
@@ -133,11 +137,45 @@ if(password !== password_match){
         alert("Valid DOB ✅"); // or submit your form here
     }
 
+ 
 
 
-if (isvalid){
-    alert("Registration form Successful");
-}
+
+
+
+    
+
+    // Gender
+    let selected = false;
+    for(let i=0; i<genderRadios.length; i++){
+        if(genderRadios[i].checked) {
+            selected = true;
+            break;
+        }
+    }
+    if(!selected) {
+        document.getElementById("gender_error").textContent = "Select your gender";
+        isValid = false;
+    }
+
+    // Final Submit
+    if(isValid) {
+        alert("Form Submitted Successfully ✅");
+        form.reset();
+    }
+ 
+
+
+
+
+
+
+
+
+// if (isvalid){
+//     alert("Registration form Successful");
+// }
 })
 
 
+var selected = false;
