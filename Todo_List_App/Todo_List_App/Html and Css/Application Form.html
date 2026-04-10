@@ -25,35 +25,35 @@
         </div>
       </div>
       <!-- <================Email=================> -->
-      <label for="">Email</label>
-      <input class="form_holder" id="email" type="email" placeholder="Enter Your Email">
+      <label for="email">Email</label>
+      <input class="form_holder" id="email" type="email" placeholder="Enter Your Email" autocomplete="additional-name">
       <div class="error" id="email_error"></div>
 
       <!-- <================password=================> -->
-      <label for="">Pasword</label>
+      <label for="password">Pasword</label>
       <input class="form_holder" id="password" type="Pasword" placeholder="Enter Your Pasword">
       <div class="error" id="passoword_error"></div>
       <!-- <================Confirm Pasword=================> -->
-      <label for="">Confirm Pasword</label>
+      <label for="password_match">Confirm Pasword</label>
       <input class="form_holder" id="password_match" type="Pasword" placeholder="Confirm Your Pasword">
 
       <div class="error" id="notmatch_error"></div>
 
       <!-- <================Phone Number=================> -->
-      <label for="">Phone Number</label>
+      <label for="phone_number">Phone Number</label>
       <input class="form_holder" id="phone_number" type="number" placeholder="Enter Your Phone Number">
       <div class="error" id="phone_error"></div>
 
       <!-- <================date of Brith=================> -->
-      <label for="">date of Brith</label>
+      <label for="date_brith">date of Brith</label>
       <input class="form_holder" id="date_brith" type="date" placeholder="Enter Your Email">
       <div class="error" id="date_error"></div>
       <!-- <================Gender=================> -->
 
       <label>Gender</label>
-      <input type="radio" name="gender" value="male"> Male
-      <input type="radio" name="gender" value="female"> Female
-      <input type="radio" name="gender" value="other"> Other
+      <input class="inline" type="radio" name="gender" value="male"> Male
+      <input class="inline" type="radio" name="gender" value="female"> Female
+      <input class="inline" type="radio" name="gender" value="other"> Other
       <div class="error" id="gender_error"></div>
 
 
@@ -62,71 +62,65 @@
     <!-- <================Phone Number=================> -->
     <fieldset>
       <legend>Education</legend>
-      <label for="">Highest Qualification</label>
-      <select>
-        <option>Select</option>
-        <option>Matric</option>
-        <option>Intermediate</option>
-        <option>Bachelors</option>
-        <option>Masters</option>
+      <label for="select">Highest Qualification</label>
+      <select id="select" required>
+        <option value="">Select</option>
+        <option value="Matric">Matric</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Bachelors">Bachelors</option>
+        <option value="Masters">Masters</option>
       </select>
       <div class="error" id="education_error"></div>
 
-      <label for="">Field of Study</label>
 
 
-      <select>
-        <option>
-          Select
-        </option>
-        <optgroup label="computer science">
 
-          <option>
-            Web Development
-          </option>
-          <option>
-            Ai/Machine Learning
-          </option>
-          <option>
-            Digital Marketing
-          </option>
+      <label for="field">Field of Study</label>
+      <select id="field" required>
+        <option value="">Select</option>
+
+        <optgroup label="Computer Science">
+          <option value="Web">Web Development</option>
+          <option value="ai">Ai/Machine Learning</option>
+          <option value="Digital">Digital Marketing</option>
         </optgroup>
 
         <optgroup label="Engineering">
-          <option>Machanical Engineering</option>
-          <option>Electrical Engineering</option>
-          <option>Bio-Medical Engineering</option>
+          <option value="mach">Mechanical Engineering</option>
+          <option value="elec">Electrical Engineering</option>
+          <option value="bio">Bio-Medical Engineering</option>
         </optgroup>
       </select>
+
       <div class="error" id="study_error"></div>
 
-      <label for="">Skills</label>
-      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">Web Development
-      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">UI/UX Designer
-      <input id="skills" class="inline form_holder" type="checkbox" name="" id="">Digital Marketing
+      <label for="skills">Skills</label>
+      <input class="inline form_holder" type="checkbox" name="skills">Web Development
+      <input class="inline form_holder" type="checkbox" name="skills">UI/UX Designer
+      <input class="inline form_holder" type="checkbox" name="skills">Digital Marketing
       <div class="error" id="skills_error"></div>
     </fieldset>
 
 
     <fieldset>
       <legend>Upload & Preferences</legend>
-      <input id="file_upload" class="inline form_holder" type="file" name="" id="">
+      <input id="file_upload" class="inline form_holder" type="file" name="">
       <div class="error" id="upload_error"></div>
       <label for="">Available Time</label>
       <input id="time" class="inline form_holder" type="time">
       <div class="error" id="time_error"></div>
       <label for="">Experience Level(0-10)</label>
-      <input id="range" class="inline form_holder" type="range" min="0" max="10">
+      <input id="range" class="inline form_holder" type="range" min="0" max="20" value="0">
       <div class="error" id="level_error"></div>
     </fieldset>
 
     <fieldset>
       <legend>Additional Information</legend>
-      <label for="">About Yourself</label>
+      <label for="textarea">About Yourself</label>
       <textarea placeholder="Write something about yourself" name="" id="textarea"></textarea>
       <div class="error" id="textarea_error"></div>
 
-      <label for=""> <input id="term_and_condition" class="inline form_holder" type="checkbox" name="">
+      <label for=""> <input id="term_and_condition" class="inline form_holder" type="checkbox">
         I agree to terms & conditions</label>
       <div class="error" id="term_error"></div>
     </fieldset>
