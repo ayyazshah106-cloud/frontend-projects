@@ -41,6 +41,7 @@ submitBtn.addEventListener("click", (e) => {
   const level_error = document.getElementById("level_error");
   const textarea_error = document.getElementById("textarea_error");
   const term_error = document.getElementById("term_error");
+  const sumbit_error = document.getElementById("sumbit_error");
 
   // Validation ke liye regex patterns
   const firstNameRegex = /^[A-Za-z]{3,20}$/;
@@ -201,9 +202,15 @@ submitBtn.addEventListener("click", (e) => {
     term_error.textContent = "Please agree to the Terms & Conditions";
     isvalid = false;
   }
-
+sumbit_error
   // Final Submit Check
-  if (isvalid) {
+  if(isvalid == false){
+sumbit_error.textContent =  "Please fill in all required fields before submitting"
+  }
+  else if (isvalid) {
     alert("Form Submitted Successfully ✅");
   }
 });
+document.getElementById("reset").addEventListener("click",function rest(){
+  document.querySelectorAll(".error").forEach((el) => (el.textContent = ""));
+})
