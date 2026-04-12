@@ -76,6 +76,7 @@ border-radius: 4px 0 0 4px;
     height: 40px;
     border: 0;
     border-radius: 0 4px 4px 0px;
+    outline: none;
 
 }
 .Action_bar {
@@ -117,7 +118,7 @@ border-radius: 4px 0 0 4px;
 }
 .banner_container2 {
     display: flex;
-    max-width: : 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -126,7 +127,7 @@ border-radius: 4px 0 0 4px;
     justify-content: space-evenly;
 }
 .banner_image3 {
-    width: 50%;
+    width: 100%;
 }
 .Banner_container4 {
     display: flex;
@@ -166,19 +167,23 @@ width: 150px;
     
 }
 .shop_by_Catagary {
+    /* width: 95%; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;}
+    justify-content: center;
+}
+
 .by_Catagary_Items {
-    width: 263px;
+    width: 300px;
 }
 
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     margin: 0 251px 0 251px;
-    width: 1080px;
+    width: 100%;
     height: 397px;
 }
 .shoplinks {
@@ -254,3 +259,57 @@ footer p {
 footer a {
     flex-direction: column;
 }
+.div1{
+    display: flex;
+}
+.logos{
+    width: 257px;
+
+   
+}
+.logo1,.logo2 {
+    gap: 10px;
+    display: flex;
+    align-items: flex-start;
+    margin: 15px 0 30px;
+}
+
+.logo1 img{
+        width: 48px;
+    height: 40px;
+}
+
+.logo2 img{
+       width: 48px;
+    height: 49px;
+}
+.Social_icons{
+    display: flex;
+    gap: 5px;
+}
+.Social_icons a img{
+   width: 20px;
+}
+.swiper {
+      width: 91%;
+      height: 458px;
+    
+    
+    }
+/* .swiper-wrapper{
+    display: flex;
+
+  
+} */
+
+    .swiper-slide img {
+      width: 100%;
+      /* height: 100%; */
+      object-fit: cover;
+      
+    }
+.swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+   
