@@ -1,130 +1,148 @@
- body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    padding: 30px;
-  }
-
-  form {
-  max-width: 800px;
-    margin: auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-      box-shadow: 2px 3px 19px rgba(0, 0, 0, 0.5);
-  }
-
-  h1{
-  text-align: center;
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  fieldset {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 15px;
-  }
-
-  legend {
-    font-weight: bold;
-    padding: 0 10px;
-  }
-
-  label {
-    width: fit-content;
-    display: block;
-    margin-top: 12px;
-    font-weight: 600;
-  }
-
-  input,
-  select,
-  textarea {
-    width: 95%;
-    padding: 8px;
-    margin-top: 5px;
-    
-  }
-  input:focus,select:focus{
-     outline: none;
-  border: 1px solid #999;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  } 
-
-  .inline {
-    width: auto;
-    margin-right: 10px;
-  }
-
-  .row {
-    width: 97.5%;
-    display: flex;
-    gap: 20px;
-  }
-
-  
-  .row div {
-    flex: 1;
-  }
-
-  .submit {
-    font-size: 16px;
-    color: #ffffff;
-    margin-top: 10px;
-    padding: 10px 20px;
-  background-color: #36A9AE;
-  background-image: linear-gradient(#37ADB2, #329CA0);
-  border: 1px solid #2A8387;
-  border-radius: 4px;
-
- 
-  }
-  .reset{
-    font-size: 16px;
-    color: #ffffff;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
-  border-radius: 4px;
- border: 1px solid #2A8387;
-  color: #FFFFFF;
-  display: inline;
-  
-  
-  }
-  .error{
-    margin-top: 10px;
-    font-size: 14px;
-    color: red;
-}
-  
-@media (max-width:500px){
+/* ===================== Page Styling ===================== */
 body {
-  padding: 0;
+font-family: Arial, sans-serif;
+background: #f4f6f8;
+padding: 30px;
 }
-h1{
-  font-size: 30px;
-}
+
+/* ===================== Form Container ===================== */
 form {
-  padding: 25px 15px;
-  box-shadow:none
+max-width: 800px;
+margin: auto;
+background: #ffffff;
+padding: 25px;
+border-radius: 8px;
+box-shadow: 2px 3px 19px rgba(0, 0, 0, 0.5);
 }
+
+/* ===================== Headings ===================== */
+h1 {
+text-align: center;
+}
+
+h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+/* ===================== Fieldset Styling ===================== */
+fieldset {
+margin-bottom: 20px;
+border: 1px solid #ccc;
+padding: 15px;
+}
+
+/* Section title inside fieldset */
+legend {
+font-weight: bold;
+padding: 0 10px;
+}
+
+/* ===================== Labels ===================== */
+label {
+width: fit-content;
+display: block;
+margin-top: 12px;
+font-weight: 600;
+}
+
+/* ===================== Inputs, Select & Textarea ===================== */
+input,
+select,
+textarea {
+width: 95%;
+padding: 8px;
+margin-top: 5px;
+}
+
+/* Input focus effect */
+input:focus,
+select:focus {
+outline: none;
+border: 1px solid #999;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================== Inline Inputs (radio / checkbox) ===================== */
+.inline {
+width: auto;
+margin-right: 10px;
+}
+
+/* ===================== Two Column Layout (First & Last Name) ===================== */
 .row {
-        flex-wrap: wrap;
-        width: 99.5%;
-        display: flex;
-        gap: 0px;
-      }
-
-
-        .row div {
-    width: 100%;
-  flex: none;}
+width: 97.5%;
+display: flex;
+gap: 20px;
 }
 
+/* Each column inside row */
+.row div {
+flex: 1;
+}
 
+/* ===================== Submit Button Styling ===================== */
+.submit {
+font-size: 16px;
+color: #ffffff;
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #36A9AE;
+background-image: linear-gradient(#37ADB2, #329CA0);
+border: 1px solid #2A8387;
+border-radius: 4px;
+}
 
+/* ===================== Reset Button Styling ===================== */
+.reset {
+font-size: 16px;
+color: #ffffff;
+margin-top: 10px;
+padding: 10px 20px;
+background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+border-radius: 4px;
+border: 1px solid #2A8387;
+display: inline;
+}
 
+/* ===================== Error Message Styling ===================== */
+.error {
+margin-top: 10px;
+font-size: 14px;
+color: red;
+}
 
+/* ===================== Mobile Responsive Design ===================== */
+@media (max-width: 500px) {
+
+/* Reduce page padding on small screens */
+body {
+padding: 0;
+}
+
+/* Smaller heading size */
+h1 {
+font-size: 30px;
+}
+
+/* Remove form shadow for mobile */
+form {
+padding: 25px 15px;
+box-shadow: none;
+}
+
+/* Stack first and last name vertically */
+.row {
+flex-wrap: wrap;
+width: 99.5%;
+display: flex;
+gap: 0px;
+}
+
+/* Full width inputs on mobile */
+.row div {
+width: 100%;
+flex: none;
+}
+
+}

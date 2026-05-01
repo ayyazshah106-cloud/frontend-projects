@@ -1,69 +1,97 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+  <!-- ===== Basic Page Setup ===== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== External CSS File ===== -->
+
   <link rel="stylesheet" href="Application_form.css">
-  <title>Student Regestration Form</title>
+
+  <!-- ===== Page Title ===== -->
+
+  <title>Student Registration Form</title>
 </head>
 
 <body>
+
+  <!-- ===================== Registration Form Start ===================== -->
+
   <form>
+
+    ```
+    <!-- ===== Main Form Heading ===== -->
     <h1>Registration Form</h1>
+
+    <!-- ===================== Personal Information Section ===================== -->
     <fieldset>
       <legend>Personal Information</legend>
-      <!-- <================UsrName=================> -->
+
+      <!-- ===== First Name & Last Name Inputs ===== -->
       <div class="row">
-        <div class="First_name"> <label for="">First name</label>
-          <input class="form_holder" id="First_name" type="text" autocomplete="off" placeholder="First Name ">
+
+        <!-- First Name -->
+        <div class="First_name">
+          <label>First name</label>
+          <input class="form_holder" id="First_name" type="text" autocomplete="off" placeholder="First Name">
+          <!-- Error message for first name -->
           <div class="error" id="Firstname_error"></div>
         </div>
-        <div class="Last_Name"><label for="">Last name</label>
+
+        <!-- Last Name -->
+        <div class="Last_Name">
+          <label>Last name</label>
           <input class="form_holder" id="Last_Name" type="text" autocomplete="off" placeholder="Last Name">
+          <!-- Error message for last name -->
           <div class="error" id="Lastname_error"></div>
         </div>
+
       </div>
-      <!-- <================Email=================> -->
+
+      <!-- ===== Email Input ===== -->
       <label for="email">Email</label>
-      <input class="form_holder" id="email" type="email" placeholder="Enter Your Email" autocomplete="additional-name">
+      <input class="form_holder" id="email" type="email" placeholder="Enter Your Email">
       <div class="error" id="email_error"></div>
 
-      <!-- <================password=================> -->
-      <label for="password">Pasword</label>
-      <input class="form_holder" id="password" type="Pasword" placeholder="Enter Your Pasword">
+      <!-- ===== Password Input ===== -->
+      <label for="password">Password</label>
+      <input class="form_holder" id="password" type="password" placeholder="Enter Your Password">
       <div class="error" id="passoword_error"></div>
-      <!-- <================Confirm Pasword=================> -->
-      <label for="password_match">Confirm Pasword</label>
-      <input class="form_holder" id="password_match" type="Pasword" placeholder="Confirm Your Pasword">
 
+      <!-- ===== Confirm Password Input ===== -->
+      <label for="password_match">Confirm Password</label>
+      <input class="form_holder" id="password_match" type="password" placeholder="Confirm Your Password">
       <div class="error" id="notmatch_error"></div>
 
-      <!-- <================Phone Number=================> -->
+      <!-- ===== Phone Number Input ===== -->
       <label for="phone_number">Phone Number</label>
       <input class="form_holder" id="phone_number" type="number" placeholder="Enter Your Phone Number">
       <div class="error" id="phone_error"></div>
 
-      <!-- <================date of Brith=================> -->
-      <label for="date_brith">date of Brith</label>
-      <input class="form_holder" id="date_brith" type="date" placeholder="Enter Your Email">
+      <!-- ===== Date of Birth Input ===== -->
+      <label for="date_brith">Date of Birth</label>
+      <input class="form_holder" id="date_brith" type="date">
       <div class="error" id="date_error"></div>
-      <!-- <================Gender=================> -->
 
+      <!-- ===== Gender Selection ===== -->
       <label>Gender</label>
       <input class="inline" type="radio" name="gender" value="male"> Male
       <input class="inline" type="radio" name="gender" value="female"> Female
       <input class="inline" type="radio" name="gender" value="other"> Other
       <div class="error" id="gender_error"></div>
 
-
     </fieldset>
 
-    <!-- <================Phone Number=================> -->
+    <!-- ===================== Education Section ===================== -->
     <fieldset>
       <legend>Education</legend>
+
+      <!-- Highest Qualification Dropdown -->
       <label for="select">Highest Qualification</label>
-      <select id="select" required>
+      <select id="select">
         <option value="">Select</option>
         <option value="Matric">Matric</option>
         <option value="Intermediate">Intermediate</option>
@@ -72,67 +100,97 @@
       </select>
       <div class="error" id="education_error"></div>
 
-
-
-
+      <!-- Field of Study Dropdown -->
       <label for="field">Field of Study</label>
-      <select id="field" required>
+      <select id="field">
+
         <option value="">Select</option>
 
+        <!-- Computer Science Fields -->
         <optgroup label="Computer Science">
           <option value="Web">Web Development</option>
-          <option value="ai">Ai/Machine Learning</option>
+          <option value="ai">AI / Machine Learning</option>
           <option value="Digital">Digital Marketing</option>
         </optgroup>
 
+        <!-- Engineering Fields -->
         <optgroup label="Engineering">
           <option value="mach">Mechanical Engineering</option>
           <option value="elec">Electrical Engineering</option>
           <option value="bio">Bio-Medical Engineering</option>
         </optgroup>
+
       </select>
 
       <div class="error" id="study_error"></div>
 
-      <label for="skills">Skills</label>
-      <input class="inline form_holder" type="checkbox" name="skills">Web Development
-      <input class="inline form_holder" type="checkbox" name="skills">UI/UX Designer
-      <input class="inline form_holder" type="checkbox" name="skills">Digital Marketing
+      <!-- Skills Checkboxes -->
+      <label>Skills</label>
+      <input class="inline form_holder" type="checkbox" name="skills"> Web Development
+      <input class="inline form_holder" type="checkbox" name="skills"> UI/UX Designer
+      <input class="inline form_holder" type="checkbox" name="skills"> Digital Marketing
       <div class="error" id="skills_error"></div>
+
     </fieldset>
 
-
+    <!-- ===================== Upload & Preferences ===================== -->
     <fieldset>
       <legend>Upload & Preferences</legend>
-      <input id="file_upload" class="inline form_holder" type="file" name="">
+
+      <!-- File Upload -->
+      <input id="file_upload" class="inline form_holder" type="file">
       <div class="error" id="upload_error"></div>
-      <label for="">Available Time</label>
+
+      <!-- Available Time -->
+      <label>Available Time</label>
       <input id="time" class="inline form_holder" type="time">
       <div class="error" id="time_error"></div>
-      <label for="">Experience Level(0-10)</label>
+
+      <!-- Experience Level Slider -->
+      <label>Experience Level (0-10)</label>
       <input id="range" class="inline form_holder" type="range" min="0" max="20" value="0">
       <div class="error" id="level_error"></div>
+
     </fieldset>
 
+    <!-- ===================== Additional Information ===================== -->
     <fieldset>
       <legend>Additional Information</legend>
+
+      <!-- About Yourself Textarea -->
       <label for="textarea">About Yourself</label>
-      <textarea placeholder="Write something about yourself" name="" id="textarea"></textarea>
+      <textarea placeholder="Write something about yourself" id="textarea"></textarea>
       <div class="error" id="textarea_error"></div>
 
-      <label for=""> <input id="term_and_condition" class="inline form_holder" type="checkbox">
-        I agree to terms & conditions</label>
+      <!-- Terms and Conditions Checkbox -->
+      <label>
+        <input id="term_and_condition" class="inline form_holder" type="checkbox">
+        I agree to terms & conditions
+      </label>
       <div class="error" id="term_error"></div>
+
     </fieldset>
 
-    <button id="submit" class="submit" type="submit">Submit</button>
-    <div class="error" id="sumbit_error"></div>
-    <span> <button id="reset" class="reset" type="reset">reset</button></span>
+    <!-- ===================== Form Buttons ===================== -->
 
-    <div class="error" id="reset_error"></div>
+    <!-- Submit Button -->
+    <button id="submit" class="submit" type="submit">Submit</button>
+
+    <!-- Reset Button -->
+    <button id="reset" class="reset" type="reset">Reset</button>
+
+    <!-- Submit Error Message -->
+    <div class="error" id="sumbit_error"></div>
+    ```
 
   </form>
+
+  <!-- ===== External JavaScript File ===== -->
+
   <script src="Application Form.js"></script>
+
+  <!-- ===================== Registration Form End ===================== -->
+
 </body>
 
 </html>
