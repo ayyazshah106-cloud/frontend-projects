@@ -1,1 +1,871 @@
+/* ===================== GLOBAL RESET & BASE STYLES ===================== */
+/* Removes default margin/padding, sets a consistent font stack,
+   and applies border-box sizing to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  font-family:
+    Assistant,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  box-sizing: border-box;
+}
 
+/* ===================== HEADER: HAMBURGER MENU ICON ===================== */
+/* Hidden by default on desktop; shown on smaller screens via media query */
+.Header_menu_icon {
+  display: none;
+  width: clamp(35px, 3vw, 41px);
+  margin-left: clamp(15px, 3vw, 35px);
+}
+
+/* ===================== HEADER: MAIN HEADER BAR ===================== */
+/* Fixed top bar with white background, flex layout, and a subtle drop shadow */
+header {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  z-index: 3;
+}
+
+/* ===================== MAIN CONTENT AREA ===================== */
+/* Adds top margin to prevent content from being hidden behind the fixed header */
+main {
+  margin-top: clamp(60px, 8vw, 80px);
+}
+
+/* ===================== HEADER: MYNTRA LOGO IMAGE ===================== */
+/* Responsive logo height using clamp for fluid scaling */
+.Myntra_Home {
+  height: clamp(35px, 4vw, 45px);
+}
+
+/* ===================== HEADER: LOGO CONTAINER ===================== */
+/* Left-side container holding the hamburger icon and Myntra logo */
+.logo_container {
+  margin-left: clamp(15px, 4vw, 4%);
+}
+
+/* ===================== HEADER: ACTION BAR (RIGHT SIDE) ===================== */
+/* Right-side container holding profile, wishlist, and bag icons */
+.Action_bar {
+  margin-right: clamp(15px, 4vw, 4%);
+}
+
+/* ===================== HEADER: NAV LINK "NEW" BADGE ===================== */
+/* Styles the superscript "new" label on the Studio nav link */
+.nav_bar a sup {
+  margin-bottom: 23px;
+  color: #ff3f6c;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(7px, 0.8vw, 9px);
+}
+
+/* ===================== HEADER: NAVIGATION BAR ===================== */
+/* Flex row of category links stretched to fill the full header height */
+/* Alternative approach - more robust */
+.nav_bar {
+  display: flex;
+  min-width: clamp(350px, 30vw, 500px);
+  justify-content: space-between;
+  align-items: stretch; /* stretch to full height */
+  height: 100%; /* take parent height */
+}
+
+/* ===================== HEADER: INDIVIDUAL NAV LINKS ===================== */
+/* Uppercase, bold nav links with a pink bottom border on hover */
+.nav_bar a {
+  font-size: clamp(11px, 1vw, 14px);
+  letter-spacing: 0.3px;
+  color: #282c3f;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 clamp(5px, 1vw, 10px); /* horizontal padding only */
+  display: flex;
+  align-items: center; /* vertical center inside link */
+  height: 100%;
+  border-bottom: 5px solid #ffffff;
+  transition: border-bottom 0.2s ease;
+}
+
+/* Pink underline appears on hover to indicate active/hovered link */
+.nav_bar a:hover {
+  border-bottom: 3px solid #ff3f6c;
+}
+
+/* ===================== HEADER: DESKTOP SEARCH BAR ===================== */
+/* Visible search input on desktop; hidden on mobile via media query */
+.search_bar {
+  height: clamp(35px, 3.5vw, 40px);
+  min-width: clamp(150px, 18vw, 200px);
+  width: clamp(25%, 30vw, 30%);
+  display: flex;
+  align-items: center;
+}
+
+/* ===================== MAIN: MOBILE SEARCH BAR ===================== */
+/* Alternative search bar shown below the header on mobile screens */
+.search_bar_main {
+  display: none;
+  height: clamp(35px, 3.5vw, 40px);
+  min-width: clamp(150px, 18vw, 200px);
+  width: clamp(25%, 30vw, 30%);
+
+  align-items: center;
+}
+
+/* ===================== HERO SLIDER: 1199PX SWIPER ===================== */
+/* Mobile-only hero carousel; hidden on desktop with !important override */
+.swiper_1199px {
+  display: none !important;
+}
+
+/* ===================== SEARCH BAR: SEARCH ICON ===================== */
+/* Styled magnifying glass icon attached to the left of the search input */
+.search_icon {
+  box-sizing: content-box;
+  height: clamp(16px, 1.8vw, 20px);
+  padding: clamp(8px, 0.8vw, 10px);
+  background: #f5f5f6;
+  color: #282c3f;
+  font-weight: 200;
+  border-radius: 4px 0 0 4px;
+}
+
+/* ===================== SEARCH BAR: TEXT INPUT FIELD ===================== */
+/* Borderless input that grows to fill available space beside the search icon */
+.search_input {
+  display: flex;
+  background: #f5f5f6;
+  color: #696e79;
+  flex-grow: 1;
+  height: clamp(35px, 3.5vw, 40px);
+  border: 0;
+  border-radius: 0 4px 4px 0px;
+  outline: none;
+}
+
+/* ===================== HEADER: ACTION BAR LAYOUT ===================== */
+/* Floats the action icons to the right and spaces them evenly */
+.Action_bar {
+  float: right;
+  display: flex;
+  min-width: clamp(150px, 18vw, 200px);
+  justify-content: space-between;
+}
+
+/* ===================== HEADER: INDIVIDUAL ACTION ICON CONTAINER ===================== */
+/* Stacks icon and label vertically and centers them */
+.action_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===================== HEADER: ACTION ICON LABEL TEXT ===================== */
+/* Small bold label beneath each action icon (e.g., "profile", "bag") */
+.action_name {
+  font-weight: 700;
+  font-size: clamp(9px, 1vw, 12px);
+  text-transform: capitalize;
+}
+
+/* ===================== BANNER: 1199PX RESPONSIVE BANNER ===================== */
+/* Hidden on desktop; displayed on smaller viewports via media query */
+.Banner_container_1199px {
+  display: none;
+}
+
+/* ===================== BANNER: FIRST BANNER CONTAINER ===================== */
+/* Full-width wrapper for the first promotional banner image */
+.banner_container1 {
+  max-width: 100%;
+}
+
+/* Desktop version of the first banner image (full width) */
+.banner_image1st {
+  width: 100%;
+  display: flex;
+}
+
+/* Mobile version of the first banner image (hidden on desktop) */
+.banner_image2nd {
+  display: none;
+}
+
+.banner_image1 {
+  width: 50%;
+}
+
+/* ===================== BANNER: DUAL BANNER CONTAINER ===================== */
+/* Displays two banner images side by side on desktop */
+.Banner_container {
+  display: flex;
+  justify-content: normal;
+}
+
+/* Each banner image takes half the container width */
+.banner_image {
+  width: 50%;
+}
+
+/* ===================== BANNER: ANIMATED GIF BANNER ===================== */
+/* Full-width container for the animated promotional GIF */
+.banner_image2 {
+  width: 100%;
+}
+
+.banner_container2 {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===================== BANNER: BANNER CONTAINER 3 ===================== */
+.Banner_container3 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.banner_image3 {
+  width: 100%;
+}
+
+/* ===================== BANNER: BANNER CONTAINER 4 (CRAZY DEALS) ===================== */
+.Banner_container4 {
+  display: flex;
+  text-align: center;
+}
+
+/* banner_image4 is hidden on desktop; shown conditionally on specific viewports */
+.banner_image4 {
+  display: none;
+  width: 100%;
+}
+
+/* ===================== CATEGORY SECTION: HEADING ===================== */
+/* Uppercase, spaced-out heading used above category grids */
+.Catagary_Heading {
+  text-transform: uppercase;
+  color: #3e4152;
+  letter-spacing: 0.15em;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  margin: clamp(40px, 6vw, 65px) 0 clamp(35px, 5vw, 58px) clamp(15px, 3vw, 30px);
+  max-height: 5em;
+  font-weight: 700;
+}
+
+/* ===================== CATEGORY SECTION: ITEMS GRID ===================== */
+/* Wrapping flex container for category item thumbnails */
+.Catagary_Items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* Individual category item image sizing */
+.sell_Item {
+  width: clamp(100px, 12vw, 150px);
+}
+
+/* ===================== CRAZY DEALS SECTION ===================== */
+/* Full-width wrapping flex container for deal item thumbnails */
+.Crazy_deal {
+  width: 100%;
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Individual deal item image sizing */
+.Crazy_deal_Item {
+  width: clamp(120px, 14vw, 190px);
+}
+
+/* ===================== SHOP BY CATEGORY: DESKTOP GRID ===================== */
+/* Wrapping flex layout for the desktop "Shop by Category" image grid */
+.shop_by_Catagary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Each category item image width */
+.by_Catagary_Items {
+  width: clamp(200px, 22vw, 300px);
+}
+
+/* ===================== FOOTER: BASE STYLES ===================== */
+/* Centers all footer content in a vertical column */
+footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+}
+
+/* ===================== FOOTER: SHOPPING & USEFUL LINKS COLUMN ===================== */
+/* Vertical column of navigation links in the footer */
+.shoplinks {
+  display: flex;
+  margin-top: 0px;
+  padding-top: 0px;
+  flex-direction: column;
+  width: clamp(130px, 14vw, 175px);
+  height: auto;
+  display: inline-block;
+}
+
+/* Section headings within footer link columns */
+.shoplinks p {
+  margin-top: 15px;
+  width: clamp(90px, 10vw, 120px);
+  font-size: clamp(9px, 0.9vw, 11px);
+  font-weight: 700;
+}
+
+/* Individual footer link styling within shoplinks */
+.shoplinks a {
+  width: clamp(110px, 13vw, 155px);
+  height: fit-content;
+  display: flex;
+  text-decoration: none;
+  color: #696b79;
+  display: block;
+  font-size: clamp(11px, 1.1vw, 14px);
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  line-height: normal;
+}
+
+/* General footer anchor link styling */
+footer a {
+  width: clamp(110px, 13vw, 155px);
+  height: fit-content;
+  display: flex;
+  text-decoration: none;
+  color: #696b79;
+  display: block;
+  font-size: clamp(11px, 1.1vw, 14px);
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  line-height: normal;
+}
+
+/* Footer section heading paragraphs (e.g., "ONLINE SHOPPING", "CUSTOMER POLICIES") */
+footer p {
+  margin: 16px 0px;
+  width: clamp(150px, 18vw, 203px);
+  height: auto;
+  font-size: clamp(9px, 0.9vw, 11px);
+  font-weight: 700;
+}
+
+/* ===================== FOOTER: APP STORE ICON ROW ===================== */
+.playstoreicons {
+  display: flex;
+  justify-content: center;
+  width: clamp(260px, 30vw, 360px);
+  height: auto;
+}
+
+/* Heading above the app store icons */
+.playstoreicons h3 {
+  margin-top: 30px;
+  width: clamp(150px, 18vw, 204px);
+  height: auto;
+  font-size: clamp(9px, 0.9vw, 11px);
+  font-weight: 700;
+}
+
+.keepintouch {
+  margin: 0;
+}
+
+/* Overrides footer link direction to vertical stacking */
+footer a {
+  flex-direction: column;
+}
+
+/* ===================== FOOTER: MAIN FOOTER ROW (DIV1) ===================== */
+/* Responsive row containing all footer columns (links, policies, app, social) */
+.div1 {
+  width: clamp(80%, 85vw, 60%);
+  display: flex;
+  justify-content: space-between;
+  /* gap: clamp(10px, 2vw, 20px); */
+  flex-wrap: wrap;
+}
+
+/* ===================== FOOTER: TRUST BADGE LOGOS CONTAINER ===================== */
+/* Holds the "100% Original" and "Return Policy" trust badge rows */
+.logos {
+  width: clamp(180px, 22vw, 257px);
+  margin-left: clamp(20px, 5vw, 50px);
+}
+
+/* Individual trust badge rows: icon + text side by side */
+.logo1,
+.logo2 {
+  gap: clamp(8px, 1.5vw, 10px);
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0 30px;
+  color: #696b79;
+}
+
+/* Original guarantee badge icon sizing */
+.logo1 img {
+  width: clamp(38px, 4vw, 48px);
+  height: clamp(32px, 3.5vw, 40px);
+}
+
+/* Return policy badge icon sizing */
+.logo2 img {
+  width: clamp(38px, 4vw, 48px);
+  height: clamp(39px, 4.5vw, 49px);
+}
+
+/* ===================== FOOTER: SOCIAL MEDIA ICONS ===================== */
+/* Horizontal row of social media icon links (Facebook, Twitter, YouTube, Instagram) */
+.Social_icons {
+  width: fit-content;
+  display: flex;
+  gap: clamp(12px, 1.8vw, 16px);
+}
+
+.Social_icons a {
+  width: clamp(16px, 1.8vw, 20px);
+}
+
+.Social_icons a img {
+  width: clamp(16px, 1.8vw, 20px);
+  height: clamp(16px, 1.8vw, 20px);
+}
+
+/* ===================== FOOTER: APP DOWNLOAD COLUMN (DIVC) ===================== */
+.divc {
+  height: auto;
+}
+
+/* Container for "Experience Myntra App on Mobile" text and store buttons */
+.exp_play {
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+/* Row of Google Play and App Store download buttons */
+.playstore {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.playstore a {
+  width: fit-content;
+  margin-right: 10px;
+}
+
+/* "KEEP IN TOUCH" heading above social icons */
+.divc h3 {
+  font-size: clamp(9px, 1vw, 12px);
+  margin-bottom: 10px;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+/* Bold text highlight used in trust badge descriptions */
+strong {
+  color: #282c3f;
+  font-weight: 700;
+}
+
+/* ===================== FOOTER: TRUST BADGE SECTION WRAPPER ===================== */
+.divd {
+  height: fit-content;
+}
+
+/* ===================== FOOTER: BOTTOM SECTION (DIV2) ===================== */
+/* Contains popular searches, copyright info, and registered address */
+.div2 {
+  width: clamp(80%, 85vw, 60%);
+}
+
+/* ===================== FOOTER: POPULAR SEARCHES HEADING ===================== */
+/* Heading with a decorative horizontal line extending to the right */
+.heading-line {
+  display: flex;
+  align-items: center;
+  color: #282c3f;
+  font-size: clamp(9px, 1vw, 12px);
+  font-weight: 700;
+}
+
+/* The decorative line after the heading text */
+.heading-line span {
+  border-bottom: 1px solid #cdd4dc;
+  width: 88%;
+  margin-left: 10px;
+}
+
+/* ===================== FOOTER: POPULAR SEARCHES KEYWORD LIST ===================== */
+/* Pipe-separated list of popular search terms for SEO and navigation */
+.POPULAR_SEARCHES_para {
+  width: 100%;
+  height: fit-content;
+  color: #696b79;
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 400;
+  line-height: clamp(20px, 2vw, 25px);
+}
+
+/* ===================== FOOTER: COPYRIGHT ROW ===================== */
+/* Space-between row showing contact info, copyright, and company name */
+.all_rights {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ===================== FOOTER: ADDRESS & TELEPHONE ROW ===================== */
+/* Flex row aligning the office address block and contact details side by side */
+.adress_Telephone {
+  margin-right: clamp(20px, 8vw, 100px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* CIN and telephone number text styling */
+.Telephone h2 {
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 400;
+  color: #94969f;
+  line-height: 20px;
+}
+
+/* "Registered Office Address" heading */
+.Registered_Office {
+  display: flex;
+  align-items: center;
+  color: #282c3f;
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 700;
+}
+
+/* Preformatted address block styling */
+pre {
+  color: #696b79;
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 400;
+}
+
+/* ===================== SWIPER CAROUSEL: BASE STYLES ===================== */
+/* Sets the width and fixed height of all Swiper carousel instances */
+.swiper {
+  width: 91%;
+  height: clamp(300px, 30vw, 500px);
+}
+
+/* Ensures all carousel slide images fill their slide and crop uniformly */
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Positions the pagination dots below the carousel */
+.swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* ===================== SHOP BY CATEGORY: 1024PX GRID ===================== */
+/* Hidden on desktop; displayed as a CSS grid on tablet-sized screens */
+.shop_by_Catagary_1024 {
+  display: none;
+}
+
+/* Copyright text colour and size */
+.all_rights {
+  font-size: clamp(12px, 1.2vw, 15px);
+  color: #696b79;
+}
+
+/* ===================== RESPONSIVE STYLES: MAX-WIDTH 1199PX ===================== */
+/* Tablet and mobile layout overrides applied below 1199px viewport width */
+@media (max-width: 1199px) {
+  /* Reduce header height on smaller screens */
+  header {
+    height: clamp(56px, calc(50.903px + 1.593vw), 70px);
+  }
+
+  /* Show the hamburger menu icon on mobile */
+  .Header_menu_icon {
+    display: inline-block;
+    width: 20px;
+  }
+
+  /* Shrink the Myntra logo on smaller viewports */
+  .Myntra_Home {
+    width: clamp(28px, calc(25.816px + 0.683vw), 34px);
+  }
+
+  /* Slightly reduce action label font size */
+  .action_name {
+    font-weight: 700;
+    font-size: clamp(8px, calc(7.636px + 0.114vw), 9px);
+  }
+
+  /* Fluid icon font size for Material Symbols */
+  .material-symbols-outlined {
+    font-size: clamp(21.5px, calc(20.59px + 0.284vw), 24px) !important;
+  }
+
+  /* Hide desktop navigation links on mobile */
+  .nav_bar {
+    display: none;
+  }
+
+  /* Hide the desktop search bar on mobile */
+  .search_bar {
+    display: none;
+  }
+
+  /* Flex layout for logo container on mobile (icon + logo side by side) */
+  .logo_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  /* Mobile search bar strip: fixed below the header, full-width white bar */
+  .seaech_bar_border {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: clamp(50px, calc(42.719px + 2.275vw), 70px);
+    z-index: 2;
+  }
+
+  /* Styled pill-shaped search input for mobile */
+  .search_bar_main {
+    /* position: fixed;
+    top: 80px; */
+    width: 97%;
+    border: 1px solid #e9e9eb;
+    background: #f5f5f6;
+    border-radius: 20px;
+
+    display: flex;
+    padding: 10px 14px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-shadow: 0 4px 10px 0 rgba(40, 44, 63, 0.10196078431372549);
+    box-shadow: 0 4px 10px 0 rgba(40, 44, 63, 0.10196078431372549);
+  }
+
+  /* Mobile search icon sizing */
+  .search_icon {
+    width: 16px;
+    /* height: 16px; */
+  }
+
+  /* Main content layout on mobile: column-centered with extra top margin for fixed bars */
+  main {
+    display: flex;
+    margin-top: clamp(80px, calc(72.719px + 2.275vw), 100px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Show the mobile hero swiper and add spacing below the fixed search bar */
+  .swiper_1199px {
+    display: flex !important;
+    margin-top: 50px;
+  }
+
+  /* Let the swiper height adapt to image content on mobile */
+  .swiper {
+    height: auto;
+  }
+
+  /* Swap desktop and mobile versions of the first banner */
+  .banner_image1st {
+    display: none;
+  }
+  .banner_image2nd {
+    display: flex;
+    width: 100%;
+  }
+
+  /* Hide the desktop dual-image banner container on mobile */
+  .Banner_container {
+    display: none;
+  }
+
+  /* Show the mobile-specific single banner container */
+  .Banner_container_1199px {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .Banner_container_1199px img {
+    width: 100%;
+  }
+
+  /* Hide the desktop category grid and show the tablet grid instead */
+  .shop_by_Catagary {
+    display: none;
+  }
+
+  /* Display the 1024px category grid as a 6-column responsive CSS grid */
+  .shop_by_Catagary_1024 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+      6,
+      clamp(53px, calc(-0.151px + 16.61vw), 199px)
+    );
+    justify-items: center;
+    align-items: center;
+  }
+
+  /* Fluid width for each category thumbnail in the tablet grid */
+  .by_Catagary_Items {
+    width: clamp(54px, calc(-12.818px + 20.881vw), 201px);
+  }
+
+  /* Hide banner_image4 elements on this breakpoint */
+  .banner_image4 {
+    display: none;
+  }
+
+  .all_rights {
+    font-size: clamp(12px, 1.2vw, 15px);
+    color: #696b79;
+  }
+
+  /* Hide swiper pagination dots on mobile */
+  .swiper-pagination {
+    display: none !important;
+  }
+}
+
+/* ===================== RESPONSIVE STYLES: MAX-WIDTH 360PX ===================== */
+/* Extra-small screen (very narrow mobile) layout adjustments */
+
+@media (max-width: 1024px) {
+  .logos {
+    width: unset;
+    margin-left: unset;
+  }
+}
+
+/* ===================== RESPONSIVE STYLES: MAX-WIDTH 360PX ===================== */
+/* Extra-small screen (very narrow mobile) layout adjustments */
+@media (max-width: 360px) {
+  /* Center-align all footer columns on very small screens */
+  .div1 {
+    justify-content: center;
+  }
+
+  /* Center-align items in the shopping links column */
+  .shoplinks {
+    display: flex;
+    align-items: center;
+  }
+  .shoplinks a {
+    display: flex;
+    align-items: center;
+  }
+  .shoplinks p {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Center-align the customer policies column */
+  .divb .policy {
+    height: clamp(224px, calc(210.2px + 4.313vw), 293px) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Stack app download section content vertically and center it */
+  .divc,
+  .exp_play,
+  .playstore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Shrink the app section description text */
+  .exp_play p {
+    font-size: 8px;
+  }
+
+  /* Align trust badge icons and text to center on tiny screens */
+  .logo1,
+  .logo2 {
+    align-items: center;
+  }
+
+  /* Smaller trust badge text and tighter margin */
+  .logo1,
+  .logo2 span {
+    font-size: 10px;
+    /* margin: 15px 0 15px; */
+  }
+  .logo1 {
+    margin: 10px 0;
+  }
+
+  .logos {
+    width: clamp(180px, 22vw, 257px);
+    margin-left: clamp(20px, 5vw, 50px);
+  }
+}
+
+/* @media (max-width: 1024px) {
+ 
+  .shop_by_Catagary {
+    display: none;
+  }
+
+} */
