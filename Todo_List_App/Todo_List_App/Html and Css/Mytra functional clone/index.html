@@ -1,1 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mynra project2</title>
+  <!-- Link to external CSS stylesheet for Myntra styles -->
+  <link rel="stylesheet" href="index.css">
+  <!-- Google Material Symbols font for icons used in header and search bar -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Swiper.js CSS for carousel/slider functionality -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- ===================== HEADER SECTION ===================== -->
+  <!-- Contains the logo, navigation links, search bar, and action icons -->
+  <header>
+
+    <!-- Logo area: hamburger menu icon + Myntra home logo image -->
+    <div class="logo_container">
+
+      <!-- Hamburger (three-line) menu icon using inline SVG -->
+      <div class="Header_menu_icon">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M3.444 5.422a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444zm0 7.111a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444zm0 7.111a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444z"
+            fill="#3E4152" fillrule="evenodd"></path>
+        </svg>
+      </div>
+      <!-- Myntra logo linking to the homepage -->
+      <a href="#">
+        <img class="Myntra_Home" src="Images\myntra-2.svg" alt="myntra Home">
+      </a>
+    </div>
+
+    <!-- Main navigation bar with category links -->
+    <div class="nav_bar">
+      <a href="#">Men</a>
+      <a href="#">women</a>
+      <a href="#">kids</a>
+      <a href="#">home & living</a>
+      <a href="#">beauty</a>
+      <!-- Studio link with a "New" badge superscript -->
+      <a href="#">studio <sup>new</sup></a>
+    </div>
+
+    <!-- Desktop search bar with search icon and text input -->
+    <div class="search_bar">
+      <span class="material-symbols-outlined search_icon">search</span>
+      <input class="search_input" placeholder="Search for products, brands and more">
+    </div>
+
+    <!-- Action icons: Profile, Wishlist, and Shopping Bag -->
+    <div class="Action_bar">
+      <!-- Profile icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">person</span>
+        <span class="action_name">profile</span>
+      </div>
+
+      <!-- Wishlist icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">favorite</span>
+        <span class="action_name">whishlist</span>
+      </div>
+
+      <!-- Shopping bag icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">shopping_bag</span>
+        <span class="action_name">bag</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT SECTION ===================== -->
+  <main>
+    <!-- Mobile search bar (visible on smaller screens, hidden on desktop) -->
+    <div class="seaech_bar_border">
+      <div class="search_bar_main">
+        <span class="material-symbols-outlined search_icon">search</span>
+        <input class="search_input" placeholder="Search for products, brands and more">
+      </div>
+    </div>
+
+    <!-- ---- Hero Swiper Slider (max-width 1199px screens) ---- -->
+    <!-- Displays a full-width image carousel for smaller viewports -->
+    <div class="swiper swiper_1199px">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="Images/67.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/68.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/69.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/70.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/71.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/72.webp" alt="">
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+    <!-- ---- First Banner Container: Two promotional banner images side by side ---- -->
+    <div class="banner_container1">
+      <a href="#"><img class="banner_image1st" src="Images/1.webp">
+        <img class="banner_image2nd" src="Images/73.webp"></a>
+    </div>
+
+    <!-- ---- Standard Banner Container: Two banner images displayed on desktop ---- -->
+    <div class="Banner_container">
+      <img class="banner_image" src="Images/2.webp" alt="banner">
+      <img class="banner_image" src="Images/3.webp" alt="banner">
+    </div>
+
+    <!-- ---- Responsive Banner for screens up to 1199px ---- -->
+    <div class="Banner_container_1199px">
+      <img class="banner_image" src="Images/74.webp" alt="banner">
+    </div>
+
+    <!-- ---- Animated GIF Banner (promotional visual) ---- -->
+    <div class="banner_container2">
+      <img class="banner_image2" src="Images/4.gif">
+    </div>
+
+    <!-- ---- Full-width promotional banner 3 ---- -->
+    <div class="Banner_container3">
+      <img class="banner_image3" src="Images/5.webp" alt="banner">
+
+    </div>
+
+    <!-- ---- Full-width promotional banner 4 (Crazy Deals) ---- -->
+    <div class="Banner_container4">
+      <img class="banner_image4"
+        src="New folder (13)/1e6355e9-3378-4bd2-8e89-b204fa8795681719638966218-Crazy-Deals (1).jpg" alt="banner">
+    </div>
+
+    <!-- ---- Category/Brand Swiper Carousel ---- -->
+    <!-- Auto-scrolling carousel showing product or brand category slides -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="Images/6.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/13.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/8.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/9.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/10.webp" alt="">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="Images/11.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="Images/12.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="Images/13.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="Images/13.webp" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="Images/13.webp" alt="">
+        </div>
+
+      </div>
+
+      <!-- Swiper pagination dots for this carousel -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+
+    <!-- ---- Banner 5: Full-width section divider/promotional banner ---- -->
+    <div class="Banner_container5" style="width: 100%;">
+      <img class="banner_image4" src="Images/38.webp">
+    </div>
+
+    <!-- ---- Product/Collection Swiper Carousel with clickable slides ---- -->
+    <!-- Each slide is a linked product or collection image -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide"><a href="#"><img src="Images/14.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/14.webp" alt=""></a></div>
+
+        <div class="swiper-slide"><a href="#"><img src="Images/15.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/16.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/17.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/18.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/19.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/20.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/21.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/22.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/23.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/24.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/25.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/26.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/27.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/28.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/29.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/30.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/31.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/32.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/33.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/34.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/35.webp" alt=""></a></div>
+        <div class="swiper-slide"><a href="#"><img src="Images/37.webp" alt=""></a></div>
+
+      </div>
+
+      <!-- Swiper pagination dots for this carousel -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- ---- Repeated Banner 5: Section divider/promotional banner ---- -->
+    <div class="Banner_container5" style="width: 100%;">
+      <img class="banner_image4" src="Images/38.webp">
+    </div>
+
+    <!-- ---- Shop by Category Grid (Desktop - full width layout) ---- -->
+    <!-- Displays a grid of category images for desktop viewport -->
+    <div class="shop_by_Catagary">
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/40.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/41.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/42.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/43.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/44.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/45.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/46.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/47.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/48.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/49.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/50.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/51.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/52.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/53.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/54.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/55.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/56.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/57.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/58.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/59.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/60.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/61.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/62.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/63.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/64.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/65.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/65.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="Images/65.webp"></a>
+
+    </div>
+
+
+    <!-- ---- Shop by Category Grid (1024px layout) ---- -->
+    <!-- Alternative category grid with different images for 1024px viewport -->
+    <div class="shop_by_Catagary_1024">
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/1.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/2.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/3.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/4.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/5.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/6.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/7.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/8.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/9.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/10.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/11.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/12.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/13.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/14.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/15.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/16.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/17.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/18.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/19.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/20.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/21.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/22.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/23.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/24.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/25.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/26.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/27.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/28.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/29.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/30.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/31.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/33.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/32.jpg"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/34.webp"></a>
+      <a href="#"><img class="shop by_Catagary_Items" src="img1024/35.jpg"></a>
+
+    </div>
+
+
+
+    </div>
+
+    <!-- ---- Final Banner (Banner 6): Bottom promotional image ---- -->
+    <div class="Banner_container6">
+      <img class="banner_image4" src="Images/66.webp">
+  </main>
+
+  <!-- ===================== FOOTER SECTION ===================== -->
+  <footer>
+    <!-- Main footer content: links, app download, social media, and trust logos -->
+    <div class="div1">
+      <div class="diva">
+        <div class="1">
+          <!-- Online Shopping and Useful Links column -->
+          <div class="shoplinks">
+            <p>
+              ONLINE SHOPPING
+            </p>
+            <!-- Shopping category links -->
+            <a class="footer1" href="#">Men</a>
+            <a class="footer1" href="#">women</a>
+            <a class="footer1" href="#">kids</a>
+            <a class="footer1" href="#">home & living</a>
+            <a class="footer1" href="#">beauty</a>
+            <a class="footer1" href="#">gift card</a>
+            <a class="footer1" href="#">myntra inside</a>
+
+            <p> USEFUL LINKS</p>
+            <!-- Miscellaneous useful links -->
+            <a class="footer1" href="#">Blog</a>
+            <a class="footer1" href="#">Careers</a>
+            <a class="footer1" href="#">Site Map</a>
+            <a class="footer1" href="#">Coporate Information</a>
+            <a class="footer1" href="#">Whitehat</a>
+            <a class="footer1" href="#">Cleartip</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Policies column: support and legal links -->
+      <div class="divb">
+        <div class="2 policy" style="width: 162px; height: 293px;">
+          <p> CUSTOMER POLICIES</p>
+          <a class="footer1" href="#">Contact Us</a>
+          <a class="footer1" href="#">FAQ</a>
+          <a class="footer1" href="#">T&C</a>
+          <a class="footer1" href="#">Terms Of Use</a>
+          <a class="footer1" href="#">Track Orders</a>
+          <a class="footer1" href="#">Shipping</a>
+          <a class="footer1" href="#">Cancellation</a>
+          <a class="footer1" href="#">Returns</a>
+          <a class="footer1" href="#">Privacy policy</a>
+        </div>
+      </div>
+
+      <!-- App download section and social media icons -->
+      <div class="divc">
+
+        <div class="exp_play"">
+                    <p >
+                        EXPERIENCE MYNTRA APP ON MOBILE
+                    </p>
+                    <!-- Google Play Store and Apple App Store download buttons -->
+                    <div class=" playstore">
+          <a href="#"><img src="Images/g1.png" style="height: 40px;"></a>
+          <a href="#"><img src="Images/g2.png" style="height: 40px;"></a>
+        </div>
+
+      </div>
+
+      <!-- Social media links: Facebook, Twitter, YouTube, Instagram -->
+      <h3 class=".desktop-keepInTouch">KEEP IN TOUCH
+      </h3>
+      <div class="Social_icons">
+        <a href=""><img src="Images/f.png" alt=""></a>
+        <a href=""><img src="Images/t.png" alt=""></a>
+        <a href=""><img src="Images/y.png" alt=""></a>
+        <a href=""><img src="Images/i.png" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Trust badges: 100% original guarantee and return policy -->
+    <div class="divd">
+      <div class="logos">
+        <div class="logo1">
+          <img src="Images/o.png" alt="">
+          <span><strong>100% ORIGINAL</strong> guarantee for all products at myntra.com</span>
+        </div>
+        <div class="logo2"><img src="Images/r.png" alt="">
+          <span><b>Return within 14days</b> of receiving your order</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Popular search terms and legal/copyright information -->
+    <div class="div2">
+      <!-- Popular searches heading with decorative line -->
+      <h3 class="heading-line">
+        POPULAR SEARCHES
+        <span></span>
+      </h3>
+      <!-- List of popular search keywords for SEO and quick navigation -->
+      <p class="POPULAR_SEARCHES_para">Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls |
+        Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes | Boxers |
+        Wallets | Tops | Earrings | Fastrack Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer
+        Blouse | Gowns | Rings | Cricket Shoes | Forever 21 | Eye Makeup | Photo Frames | Punjabi Suits | Bikini
+        | Myntra Fashion Show | Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles | Bras |
+        Suit | Chinos | Shoes | Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees</p>
+      <br>
+
+      <!-- Copyright notice and company info -->
+      <div class="all_rights">
+        <span>In case of any concern, Contact Us</span>
+        <span>© 2026 www.myntra.com. All rights reserved.
+        </span>
+        <span>A Flipkart company</span>
+      </div>
+      <br>
+      <hr>
+      <br>
+
+      <!-- Registered office address and contact details -->
+      <div class="adress">
+        <h3 class="Registered_Office">Registered Office Address
+        </h3>
+        <br>
+        <div class="adress_Telephone">
+          <!-- Physical address in preformatted text -->
+          <pre>Buildings Alyssa,
+Begonia and Clover situated in Embassy Tech Village,
+Outer Ring Road,
+Devarabeesanahalli Village,
+Varthur Hobli,
+Bengaluru – 560103, India</pre>
+          <!-- Corporate Identification Number and telephone -->
+          <div class="Telephone">
+            <h2>CIN: U72300KA2007PTC041799</h2>
+            <h2>Telephone: 080‑40011450</h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <!-- Swiper.js library for carousel/slider functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- Initialize all Swiper instances with auto-scroll, loop, and pagination settings -->
+  <script>
+    var swiper = new Swiper(".swiper", {
+      slidesPerView: 5,
+      direction: "horizontal",
+      loop: true,
+
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>
