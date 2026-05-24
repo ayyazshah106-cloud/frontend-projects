@@ -1,275 +1,144 @@
-<<<<<<< HEAD
-//step1 store the references 
-
+/* ================= REFERENCES ================= */
+// Input field reference
 const inputValue = document.getElementById("input_value");
-// const button = document.querySelector(".btn");
+
+// Container where todo items will be rendered
 const TodoMainElem = document.querySelector(".Todo_list_elem");
 
 
+/* ================= LOCAL STORAGE ================= */
 
-const getDataFromLocalStroage = ()=>{
-  return JSON.parse(localStorage.getItem('MyTodoData')); //pass the key  
-}
-
-const LocalTodoListAddlocalStrorage = (LocalTodoList)=>{
-return localStorage.setItem("MyTodoData", JSON.stringify(LocalTodoList));
+// Get saved todos from localStorage (or empty array if none exist)
+const getDataFromLocalStorage = () => {
+  return JSON.parse(localStorage.getItem("MyTodoData")) || [];
 };
 
+// Save updated todo list to localStorage
+const updateLocalStorage = (data) => {
+  localStorage.setItem("MyTodoData", JSON.stringify(data));
+};
 
-let LocalTodoList = getDataFromLocalStroage() || []; // global scop
+// Initial todo list state from localStorage
+let LocalTodoList = getDataFromLocalStorage();
 
 
+/* ================= CREATE TODO ELEMENT ================= */
 
+// Function to create and render a single todo item
+const addDynamicElem = (task) => {
+  const divElem = document.createElement("div");
+  divElem.classList.add("main_todo_div");
 
-const addDynamicElem = (currentTodo)=>{
-const divElem = document.createElement("div");
-divElem.classList.add("main_todo_div");
-
-divElem.innerHTML = `<li> ${currentTodo}</li>
-        <button class="deleteBtn">Delete</button>`;
-
-    TodoMainElem.append(divElem); 
+  divElem.innerHTML = `
+    <input type="checkbox" class="todo-checkbox" ${task.completed ? "checked" : ""}>
     
-};
+    <li style="text-decoration: ${task.completed ? "line-through" : "none"};">
+      ${task.text}
+    </li>
 
-const showTodoData = ()=>{
-console.log(LocalTodoList);
+    <button class="deleteBtn">Delete</button>
+  `;
 
-LocalTodoList.forEach((currentTodo)=>{
-addDynamicElem(currentTodo);
-});
-
-};
-
-
- showTodoData(); //step 3 when page referesh data show
-
-//<==============Remove data=================>
-
-const removetodoElem = (e)=>
-  {
-    const todoElemremove = e.target;
-  let todoListContent = todoElemremove.previousElementSibling.innerText;
-  const perentElem = todoElemremove.parentElement;
- 
-  console.log(todoListContent);
-  LocalTodoList = LocalTodoList.filter((curElem)=>{
-  
-  // console.log(curElem);
- return curElem !== todoListContent.toLowerCase();
-  
-});
-
- LocalTodoListAddlocalStrorage(LocalTodoList); 
- perentElem.remove();
-console.log(LocalTodoList);
-}
-
-
-
- TodoMainElem.addEventListener("click" , (e)=>
-  {
-e.preventDefault();
-if(e.target.classList.contains("deleteBtn")){
-
-  removetodoElem(e);
-}
-
-});
-
-
-
-//step 3 addTodoList function call when button clicked 
-const addTodoList = (e)=>{
- e.preventDefault();
-
-//step4 pahlay data store hoga  then display  
-// Local storage main add 
-
-const TodoListValue = inputValue.value.trim(); //remove left right space
-
-inputValue.value = "";
-
-if(TodoListValue !== ""  && !LocalTodoList.includes(TodoListValue))
-  {
-
-LocalTodoList.push(TodoListValue); //push data in local storage
-LocalTodoList =[...new Set(LocalTodoList)];  //Get Unique value
-localStorage.setItem("MyTodoData",JSON.stringify(LocalTodoList)) //set data in local storage
-
-
-// console.log(LocalTodoList);
-
-
-const divElem = document.createElement("div");
-divElem.classList.add("main_todo_div");
-
-divElem.innerHTML = `<li> ${TodoListValue}</li>
-        <button class="deleteBtn">Delete</button>`;
-
-    TodoMainElem.append(divElem);    
-}
-
+  TodoMainElem.append(divElem);
 };
 
 
+/* ================= DISPLAY TODOS ON PAGE LOAD ================= */
 
+// Render all todos from localStorage when page loads
+const showTodoData = () => {
+  TodoMainElem.innerHTML = ""; // clear existing UI
 
-
-
-
-// step 2 Button Event fire 
-document.querySelector(".btn").addEventListener("click", (e)=>{
-addTodoList(e);
-
-});
-
-
-// const deletetodo = (e)=>{
-//   console.log(e.target);
-// }
-
-
-
-
-
-
-
-=======
-//step1 store the references 
-
-const inputValue = document.getElementById("input_value");
-// const button = document.querySelector(".btn");
-const TodoMainElem = document.querySelector(".Todo_list_elem");
-
-
-
-const getDataFromLocalStroage = ()=>{
-  return JSON.parse(localStorage.getItem('MyTodoData')); //pass the key  
-}
-
-const LocalTodoListAddlocalStrorage = (LocalTodoList)=>{
-return localStorage.setItem("MyTodoData", JSON.stringify(LocalTodoList));
+  LocalTodoList.forEach((task) => {
+    addDynamicElem(task);
+  });
 };
 
-
-let LocalTodoList = getDataFromLocalStroage() || []; // global scop
-
-
+// Initial render call
+showTodoData();
 
 
-const addDynamicElem = (currentTodo)=>{
-const divElem = document.createElement("div");
-divElem.classList.add("main_todo_div");
+/* ================= ADD NEW TODO ================= */
 
-divElem.innerHTML = `<li> ${currentTodo}</li>
-        <button class="deleteBtn">Delete</button>`;
+// Add new todo item
+const addTodoList = (e) => {
+  e.preventDefault();
 
-    TodoMainElem.append(divElem); 
-    
+  const text = inputValue.value.trim(); // remove extra spaces
+  inputValue.value = ""; // clear input field
+
+  // Ignore empty input
+  if (text === "") return;
+
+  // Prevent duplicate todos
+  if (LocalTodoList.some(task => task.text === text)) return;
+
+  // Create new task object
+  const newTask = {
+    text: text,
+    completed: false
+  };
+
+  // Add to array
+  LocalTodoList.push(newTask);
+
+  // Update storage + UI
+  updateLocalStorage(LocalTodoList);
+  addDynamicElem(newTask);
 };
 
-const showTodoData = ()=>{
-console.log(LocalTodoList);
-
-LocalTodoList.forEach((currentTodo)=>{
-addDynamicElem(currentTodo);
-});
-
-};
+// Add button click event
+document.querySelector(".btn").addEventListener("click", addTodoList);
 
 
- showTodoData(); //step 3 when page referesh data show
+/* ================= DELETE & COMPLETE HANDLING ================= */
 
-//<==============Remove data=================>
+// Event delegation for delete & checkbox actions
+TodoMainElem.addEventListener("click", (e) => {
+  const target = e.target;
 
-const removetodoElem = (e)=>
-  {
-    const todoElemremove = e.target;
-  let todoListContent = todoElemremove.previousElementSibling.innerText;
-  const perentElem = todoElemremove.parentElement;
- 
-  console.log(todoListContent);
-  LocalTodoList = LocalTodoList.filter((curElem)=>{
-  
-  // console.log(curElem);
- return curElem !== todoListContent.toLowerCase();
-  
-});
+  /* ---------- DELETE TODO ---------- */
+  if (target.classList.contains("deleteBtn")) {
+    const parentElem = target.parentElement;
+    const text = parentElem.querySelector("li").innerText;
 
- LocalTodoListAddlocalStrorage(LocalTodoList); 
- perentElem.remove();
-console.log(LocalTodoList);
-}
+    // Remove from array
+    LocalTodoList = LocalTodoList.filter(task => task.text !== text);
 
+    // Update storage
+    updateLocalStorage(LocalTodoList);
 
+    // Remove from UI
+    parentElem.remove();
+  }
 
- TodoMainElem.addEventListener("click" , (e)=>
-  {
-e.preventDefault();
-if(e.target.classList.contains("deleteBtn")){
+  /* ---------- TOGGLE COMPLETE ---------- */
+  if (target.classList.contains("todo-checkbox")) {
+    const liElem = target.nextElementSibling;
+    const text = liElem.innerText;
 
-  removetodoElem(e);
-}
+    // Update completed status in array
+    LocalTodoList = LocalTodoList.map(task => {
+      if (task.text === text) {
+        task.completed = target.checked;
+      }
+      return task;
+    });
 
-});
+    // Save updated data
+    updateLocalStorage(LocalTodoList);
 
-
-
-//step 3 addTodoList function call when button clicked 
-const addTodoList = (e)=>{
- e.preventDefault();
-
-//step4 pahlay data store hoga  then display  
-// Local storage main add 
-
-const TodoListValue = inputValue.value.trim(); //remove left right space
-
-inputValue.value = "";
-
-if(TodoListValue !== ""  && !LocalTodoList.includes(TodoListValue))
-  {
-
-LocalTodoList.push(TodoListValue); //push data in local storage
-LocalTodoList =[...new Set(LocalTodoList)];  //Get Unique value
-localStorage.setItem("MyTodoData",JSON.stringify(LocalTodoList)) //set data in local storage
-
-
-// console.log(LocalTodoList);
-
-
-const divElem = document.createElement("div");
-divElem.classList.add("main_todo_div");
-
-divElem.innerHTML = `<li> ${TodoListValue}</li>
-        <button class="deleteBtn">Delete</button>`;
-
-    TodoMainElem.append(divElem);    
-}
-
-};
-
-
-
-
-
-
-
-// step 2 Button Event fire 
-document.querySelector(".btn").addEventListener("click", (e)=>{
-addTodoList(e);
-
+    // Update UI style
+    liElem.style.textDecoration = target.checked ? "line-through" : "none";
+  }
 });
 
 
-// const deletetodo = (e)=>{
-//   console.log(e.target);
-// }
+/* ================= ENTER KEY SUPPORT ================= */
 
-
-
-
-
-
-
->>>>>>> b2155b6 (C.v project)
+// Allow adding todo using Enter key
+inputValue.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTodoList(e);
+  }
+});

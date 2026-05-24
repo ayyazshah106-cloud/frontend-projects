@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Items.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>items</title>
+</head>
+
+<body>
+  <header>
+
+    <!-- Logo area: hamburger menu icon + Myntra home logo image -->
+    <div class="logo_container">
+
+      <!-- Hamburger (three-line) menu icon using inline SVG -->
+      <div class="Header_menu_icon">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M3.444 5.422a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444zm0 7.111a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444zm0 7.111a.733.733 0 110-1.466h17.047a.733.733 0 110 1.466H3.444z"
+            fill="#3E4152" fillrule="evenodd"></path>
+        </svg>
+      </div>
+      <!-- Myntra logo linking to the homepage -->
+      <a href="#">
+        <img class="Myntra_Home" src="Images\myntra-2.svg" alt="myntra Home">
+      </a>
+    </div>
+
+    <!-- Main navigation bar with category links -->
+    <div class="nav_bar">
+      <a href="#">Men</a>
+      <a href="#">women</a>
+      <a href="#">kids</a>
+      <a href="#">home & living</a>
+      <a href="#">beauty</a>
+      <!-- Studio link with a "New" badge superscript -->
+      <a href="#">studio <sup>new</sup></a>
+    </div>
+
+    <!-- Side bar with category links -->
+    <div class="overelay" style="display: none;">
+      <div class="side_bar">
+        <div class="side_heading">
+          <h3>SHOP FOR</h3>
+        </div>
+        <div class="side_content1">
+          <div class="Menu_container" id="men">
+            <a href="#">Men</a>
+            <div class="icon"><svg id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Women</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Kids</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Home </a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Beauty</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Gens</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(173,184,194,1)">
+                <path
+                  d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z">
+                </path>
+              </svg></div>
+          </div>
+
+        </div>
+        <div class="side_content2">
+          <a href="#">Order</a>
+          <a href="#">Wishlist</a>
+          <a href="#">Gift Card</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Myntra Insider</a>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="men_menu" style="display: none;">
+        <div class="men_heading">
+          <svg id="back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+            fill="rgba(189,190,191,1)">
+            <path
+              d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z">
+            </path>
+          </svg>
+          <h3>Men</h3>
+
+        </div>
+        <div class="side_content2">
+          <div class="Menu_container Topwear">
+            <div class="Menu_container1"> <a href="#">Topwear</a>
+              <div class="icon" id="pulse"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18"
+                  height="18" fill="rgba(181,179,179,1)">
+                  <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+                </svg></div>
+              <div class="icon" id="minus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                  height="24" fill="rgba(183,183,183,1)">
+                  <path d="M5 11V13H19V11H5Z"></path>
+                </svg></div>
+            </div>
+
+            <div class="sub_menu_container2">
+
+              <div class="Menu_container"> <a href="#">T-Shirts</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Casual Shirts</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Formal Shirts</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Sweatshirts</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Sweaters</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Jackets</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Blazers & Coats</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Suits</a>
+                <div class="icon"></div>
+              </div>
+              <div class="Menu_container"> <a href="#">Rain Jackets</a>
+                <div class="icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="Menu_container"> <a href="#">Indian & Festive Wear</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Bottomwear</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Innerwear & Sleepwear </a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Plus Size</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Personal Care & Grooming</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Sunglasses & Frames</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Watches</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Sports & Active Wear</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Gadgets</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Fashion Accessories</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Bags & Backpacks</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+          <div class="Menu_container"> <a href="#">Luggages & Trolleys</a>
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                fill="rgba(181,179,179,1)">
+                <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+              </svg></div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Desktop search bar with search icon and text input -->
+    <div class="search_bar">
+      <span class="material-symbols-outlined search_icon">search</span>
+      <input class="search_input" id="search" placeholder="Search for products, brands and more">
+    </div>
+
+    <!-- Action icons: Profile, Wishlist, and Shopping Bag -->
+    <div class="Action_bar">
+      <!-- Profile icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">person</span>
+        <span class="action_name">profile</span>
+      </div>
+
+      <!-- Wishlist icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">favorite</span>
+        <span class="action_name">whishlist</span>
+      </div>
+
+      <!-- Shopping bag icon and label -->
+      <div class="action_container">
+        <span class="material-symbols-outlined action_icon">shopping_bag</span>
+        <span class="action_name">bag</span>
+      </div>
+    </div>
+  </header>
+  <!-- ===================== MAIN CONTENT SECTION ===================== -->
+  <main>
+    <div class="items_container">
+
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER SECTION ===================== -->
+  <footer>
+    <!-- Main footer content: links, app download, social media, and trust logos -->
+    <div class="div1">
+      <div class="diva">
+        <div class="1">
+          <!-- Online Shopping and Useful Links column -->
+          <div class="shoplinks">
+            <p>
+              ONLINE SHOPPING
+            </p>
+            <!-- Shopping category links -->
+            <a class="footer1" href="#">Men</a>
+            <a class="footer1" href="#">women</a>
+            <a class="footer1" href="#">kids</a>
+            <a class="footer1" href="#">home & living</a>
+            <a class="footer1" href="#">beauty</a>
+            <a class="footer1" href="#">gift card</a>
+            <a class="footer1" href="#">myntra inside</a>
+
+            <p> USEFUL LINKS</p>
+            <!-- Miscellaneous useful links -->
+            <a class="footer1" href="#">Blog</a>
+            <a class="footer1" href="#">Careers</a>
+            <a class="footer1" href="#">Site Map</a>
+            <a class="footer1" href="#">Coporate Information</a>
+            <a class="footer1" href="#">Whitehat</a>
+            <a class="footer1" href="#">Cleartip</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Policies column: support and legal links -->
+      <div class="divb">
+        <div class="2 policy" style="width: 162px; height: 293px;">
+          <p> CUSTOMER POLICIES</p>
+          <a class="footer1" href="#">Contact Us</a>
+          <a class="footer1" href="#">FAQ</a>
+          <a class="footer1" href="#">T&C</a>
+          <a class="footer1" href="#">Terms Of Use</a>
+          <a class="footer1" href="#">Track Orders</a>
+          <a class="footer1" href="#">Shipping</a>
+          <a class="footer1" href="#">Cancellation</a>
+          <a class="footer1" href="#">Returns</a>
+          <a class="footer1" href="#">Privacy policy</a>
+        </div>
+      </div>
+
+      <!-- App download section and social media icons -->
+      <div class="divc">
+
+        <div class="exp_play"">
+                    <p >
+                        EXPERIENCE MYNTRA APP ON MOBILE
+                    </p>
+                    <!-- Google Play Store and Apple App Store download buttons -->
+                    <div class=" playstore">
+          <a href="#"><img src="Images/g1.png" style="height: 40px;"></a>
+          <a href="#"><img src="Images/g2.png" style="height: 40px;"></a>
+        </div>
+
+      </div>
+
+      <!-- Social media links: Facebook, Twitter, YouTube, Instagram -->
+      <h3 class=".desktop-keepInTouch">KEEP IN TOUCH
+      </h3>
+      <div class="Social_icons">
+        <a href=""><img src="Images/f.png" alt=""></a>
+        <a href=""><img src="Images/t.png" alt=""></a>
+        <a href=""><img src="Images/y.png" alt=""></a>
+        <a href=""><img src="Images/i.png" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Trust badges: 100% original guarantee and return policy -->
+    <div class="divd">
+      <div class="logos">
+        <div class="logo1">
+          <img src="Images/o.png" alt="">
+          <span><strong>100% ORIGINAL</strong> guarantee for all products at myntra.com</span>
+        </div>
+        <div class="logo2"><img src="Images/r.png" alt="">
+          <span><b>Return within 14days</b> of receiving your order</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Popular search terms and legal/copyright information -->
+    <div class="div2">
+      <!-- Popular searches heading with decorative line -->
+      <h3 class="heading-line">
+        POPULAR SEARCHES
+        <span></span>
+      </h3>
+      <!-- List of popular search keywords for SEO and quick navigation -->
+      <p class="POPULAR_SEARCHES_para">Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls |
+        Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes | Boxers |
+        Wallets | Tops | Earrings | Fastrack Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer
+        Blouse | Gowns | Rings | Cricket Shoes | Forever 21 | Eye Makeup | Photo Frames | Punjabi Suits | Bikini
+        | Myntra Fashion Show | Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles | Bras |
+        Suit | Chinos | Shoes | Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees</p>
+      <br>
+
+      <!-- Copyright notice and company info -->
+      <div class="all_rights">
+        <span>In case of any concern, Contact Us</span>
+        <span>© 2026 www.myntra.com. All rights reserved.
+        </span>
+        <span>A Flipkart company</span>
+      </div>
+      <br>
+      <hr>
+      <br>
+
+      <!-- Registered office address and contact details -->
+      <div class="adress">
+        <h3 class="Registered_Office">Registered Office Address
+        </h3>
+        <br>
+        <div class="adress_Telephone">
+          <!-- Physical address in preformatted text -->
+          <pre>Buildings Alyssa,
+Begonia and Clover situated in Embassy Tech Village,
+Outer Ring Road,
+Devarabeesanahalli Village,
+Varthur Hobli,
+Bengaluru – 560103, India</pre>
+          <!-- Corporate Identification Number and telephone -->
+          <div class="Telephone">
+            <h2>CIN: U72300KA2007PTC041799</h2>
+            <h2>Telephone: 080‑40011450</h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="item.js"></script>
+</body>
+
+</html>
