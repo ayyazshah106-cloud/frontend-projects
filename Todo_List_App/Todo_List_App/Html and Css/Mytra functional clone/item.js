@@ -1,7 +1,12 @@
 
 
 let displayItemsOnHomePage = ()=>{
-let Items_container_elem = document.querySelector(".items_container");
+  if(Items_container_elem === null){
+    return;
+  }
+
+  let Items_container_elem = document.querySelector(".items_container");
+  
 
 // let items = {
 //   item_image : "Images/item1.jpg",
