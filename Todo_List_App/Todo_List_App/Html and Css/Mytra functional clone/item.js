@@ -1,11 +1,13 @@
 
 
 let displayItemsOnHomePage = ()=>{
+let Items_container_elem = document.querySelector(".items_container");
+
   if(Items_container_elem === null){
     return;
   }
 
-  let Items_container_elem = document.querySelector(".items_container");
+  // let Items_container_elem = document.querySelector(".items_container");
   
 
 // let items = {
@@ -52,11 +54,7 @@ innerHTML+=`<div class="item_container">
 Items_container_elem.innerHTML =innerHTML;
 }
 
-
-
 let bagItems;
-
-
 
 function addToBag(itemId){
   bagItems.push(itemId);
