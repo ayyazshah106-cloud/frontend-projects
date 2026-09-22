@@ -107,3 +107,7 @@ function typeEffect() {
 }
 
 typeEffect();
+
+function pageRedict(){
+  window.location.href='ItemsPage.html'
+}

@@ -312,7 +312,35 @@ main {
 .by_Catagary_Items {
   width: clamp(200px, 22vw, 300px);
 }
-
+.add_to_bag {
+  font-size: 14px;
+  display: flex;
+  width: 320px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: #65f19dd2;
+  color: black;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+}
+.add_to_bag:hover {
+  background-color: #65f19d;
+  color: black;
+  cursor: pointer;
+}
+img {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 420px;
+  transition: transform 0.2s ease;
+}
+img:hover {
+  transform: scale(1.02);
+}
 /* ===================== FOOTER: BASE STYLES ===================== */
 /* Centers all footer content in a vertical column */
 footer {
@@ -1002,7 +1030,9 @@ pre {
 .item_container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 5px;
 }
 .bag_item_count {
   background-color: #f16565;

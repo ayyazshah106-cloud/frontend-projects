@@ -1,10 +1,50 @@
+const CONVENIENCE_FEE =99;
 let currentbagitems;
-
 onLoad();
 function onLoad(){
   itemObej();
  displayBagitems();
+ displayBagSummary();
 }
+
+
+ function displayBagSummary(){
+  let BagSummaryElement = document.querySelector(".bag-summary");
+  let totalItems = currentbagitems.length;
+  let totalMrp = 0;
+  let totalDiscount = 0;
+  let finalPayment = 0;
+  currentbagitems.forEach(bagItem =>{
+    totalMrp += bagItem.original_price;
+    totalDiscount += bagItem.current_price - bagItem.original_price;
+     finalPayment += totalMrp + totalDiscount + CONVENIENCE_FEE;
+  });
+
+ 
+  BagSummaryElement.innerHTML = ` <div class="bag-details-container">
+          <div class="price-header">PRICE DETAILS (${totalItems} Items) </div>
+          <div class="price-item">
+            <span class="price-item-tag">Total MRP</span>
+            <span class="price-item-value">Rs${totalMrp}</span>
+          </div>
+          <div class="price-item">
+            <span class="price-item-tag">Discount on MRP</span>
+            <span class="price-item-value priceDetail-base-discount">-Rs${totalDiscount}</span>
+          </div>
+          <div class="price-item">
+            <span class="price-item-tag">Convenience Fee</span>
+            <span class="price-item-value">Rs 99</span>
+          </div>
+          <hr>
+          <div class="price-footer">
+            <span class="price-item-tag">Total Amount</span>
+            <span class="price-item-value">Rs ${finalPayment}</span>
+          </div>
+        </div>
+        <button class="btn-place-order">
+          <div class="css-xjhrni">PLACE ORDER</div>
+        </button>`
+ }
 
 function itemObej(){
   currentbagitems = bagItems.map(Itemid=>{
@@ -32,6 +72,21 @@ function displayBagitems(){
   bag_items_container.innerHTML = innerHTML;
 }
 
+function removefrombag(bagId){
+ let index = bagItems.findIndex(id => String(id) === String(bagId));
+
+if (index !== -1) {
+    bagItems.splice(index, 1);
+}
+
+localStorage.setItem("bagItems", JSON.stringify(bagItems));
+   itemObej();
+   displayBagItems();
+   displayBagitems();
+   displayBagSummary();
+
+
+}
 
 
 
@@ -58,6 +113,6 @@ return ` <div class="bag-item-container">
             </div>
           </div>
 
-          <div class="remove-from-cart">X</div>
+          <div class="remove-from-cart" onclick = "removefrombag(${item.id})">X</div>
         </div>`
 }
