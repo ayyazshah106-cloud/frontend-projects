@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [Products, setproducts] = useState([]);
@@ -28,9 +29,17 @@ const Products = () => {
   );
 };
 const ProductCard = ({ items }) => {
+  const navigate = useNavigate();
   return (
-    <div className="bg-gray-700 rounded-lg ">
-      <img className="aspect-square object-contain " src={items.image} alt="" />
+    <div
+      onClick={() => navigate(`/Products/${items.id}`)}
+      className="bg-gray-700 rounded-lg group"
+    >
+      <img
+        className="aspect-square object-contain group-hover:scale-90 transition-all duration-400 hover:cursor-pointer "
+        src={items.image}
+        alt=""
+      />
       <div className="p-5">
         <h1 className="text-xl line-clamp-2"> {items.title}</h1>
 
