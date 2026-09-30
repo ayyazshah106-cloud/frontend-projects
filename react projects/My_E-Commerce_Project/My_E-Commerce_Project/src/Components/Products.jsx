@@ -41,7 +41,7 @@ const ProductCard = ({ items }) => {
         alt=""
       />
       <div className="p-5">
-        <h1 className="text-xl line-clamp-2"> {items.title}</h1>
+        <h1 className="items-start text-xl line-clamp-2"> {items.title}</h1>
 
         <div className="flex items-center gap-3 py-3">
           <p className="bg-green-600 w-fit py-1 -px-0 px-3 rounded-lg text-white text-xs flex items-center justify-items-start">
