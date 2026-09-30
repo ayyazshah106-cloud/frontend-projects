@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <>
       <div className="flex  bg-gray-700 items-center py-3 px-8 gap-16">
-        <img className="w-15" src="/src/assets/logo.png" alt="" />
+        <img className="w-15" src="/logo.png" alt="" />
 
         <div className=" text-2xl flex gap-7 font-bold text-white ">
           <Menu to="/Home" title="Home" />

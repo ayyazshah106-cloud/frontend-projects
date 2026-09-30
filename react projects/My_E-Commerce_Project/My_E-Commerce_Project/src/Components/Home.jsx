@@ -40,9 +40,7 @@ const Home = () => {
             {/* Product Image Tag */}
             <div className="w-full h-64 sm:h-80 flex items-center justify-center relative z-10">
               <img
-                // Step 2: Import ki hui pic yahan lagayein (e.g., src={heroImg})
-                // Ya direct image ka path/URL likhein
-                src="src\assets\tshirt.svg"
+                src="\tshirt.svg"
                 alt="Casual Slim Fit"
                 className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
               />
