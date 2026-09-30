@@ -7,7 +7,7 @@ const Nav = () => {
       <div className="flex  bg-gray-700 items-center py-3 px-8 gap-16">
         <img className="w-15" src="/src/assets/logo.png" alt="" />
 
-        <div className=" text-2xl flex gap-7 ">
+        <div className=" text-2xl flex gap-7 font-bold text-white ">
           <Menu to="/Home" title="Home" />
           <Menu to="/Products" title="Products" />
         </div>
@@ -19,9 +19,7 @@ const Nav = () => {
 const Menu = ({ to, title }) => {
   return (
     <NavLink
-      className={(e) => {
-        console.log(e);
-      }}
+      className={({ isActive }) => (isActive ? "text-amber-800" : "")}
       to={to}
     >
       {title}
