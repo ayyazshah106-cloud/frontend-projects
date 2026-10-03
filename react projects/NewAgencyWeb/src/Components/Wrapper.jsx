@@ -1,7 +1,7 @@
 import React from "react";
 
 const Wrapper = ({ children }) => {
-  return <div className="px-60">{children}</div>;
+  return <div className="max-w-400 m-auto ">{children}</div>;
 };
 
 export default Wrapper;
