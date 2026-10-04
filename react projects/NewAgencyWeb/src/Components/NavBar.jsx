@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Wrapper from "./Wrapper";
 import { useNewsContext } from "../context/NewsContext";
@@ -6,7 +6,7 @@ import { useNewsContext } from "../context/NewsContext";
 let debouncing = null;
 
 const NavBar = () => {
-  const { setNews, fetchNews } = useNewsContext();
+  const { News, setNews, fetchNews } = useNewsContext();
 
   const handleClick = (e) => {
     const inputValue = e.target.value;
@@ -24,11 +24,35 @@ const NavBar = () => {
       setNews(data.articles);
     }, 1000);
   };
+  const sidebar = useRef();
+  const Close = useRef();
+  // side bar data
+  const HandleClick = async () => {
+    const data = await fetchNews(`/everything?q=${popular}`);
+    setNews(data.articles);
+  };
+
+  const HandleSlideBar = () => {
+    if (sidebar.current) {
+      sidebar.current.style.display = "inline";
+      HandleClick();
+    }
+  };
+  const closeSideBar = () => {
+    if (Close.current) {
+      sidebar.current.style.display = "none";
+    }
+  };
+  const modal = (e) => {
+    if (e.target === sidebar.current) {
+      sidebar.current.style.display = "none";
+    }
+  };
 
   return (
-    <div className="bg-base-200">
+    <div className="bg-base-200 my-4">
       <Wrapper>
-        <div className="navbar shadow-sm">
+        <div className="navbar shadow-sm ">
           <div className="flex-1">
             <a className="btn btn-ghost text-xl">daisyUI</a>
           </div>
@@ -42,7 +66,10 @@ const NavBar = () => {
             />
           </div>
 
-          <button className="btn btn-ghost btn-circle">
+          <button
+            onClick={HandleSlideBar}
+            className="z-10 btn btn-ghost btn-circle"
+          >
             <div className="indicator">
               <svg
                 aria-label="Notifications"
@@ -65,6 +92,43 @@ const NavBar = () => {
           </button>
         </div>
       </Wrapper>
+
+      <div
+        onClick={modal}
+        ref={sidebar}
+        className=" hidden w-full h-screen bg-tranperent fixed top-0 right-0"
+      >
+        <div className="w-3/5 h-screen bg-[#191919] absolute top-0 right-0 grid grid-rows-2 justify-center items-center ">
+          <button
+            onClick={closeSideBar}
+            ref={Close}
+            className=" p-5 absolute top-0 left-0  cursor-pointer text-3xl"
+          >
+            x
+          </button>
+          {News.map((news, index) => {
+            <div className="card-sm">
+              <div className="base-100 w-96 shadow-sm">
+                <figure>
+                  <img src={News?.urlToImage} alt="Shoes" />
+                </figure>
+                <div className="card-body p-1 mt-1 items-start ">
+                  <h2 className="card-title">{News?.title}</h2>
+                  <p>{NewsCards?.description}</p>
+                  <div className="card-actions justify-end">
+                    <button
+                      onClick={() => window.open(News.url)}
+                      className="badge badge-outline px-3 py-4 border-white/40 cursor-pointer "
+                    >
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>;
+          })}
+        </div>
+      </div>
     </div>
   );
 };

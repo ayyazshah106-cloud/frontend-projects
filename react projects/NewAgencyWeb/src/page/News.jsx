@@ -7,20 +7,20 @@ import { useNewsContext } from "../context/NewsContext";
 const News = () => {
   const { News, setNews, fetchNews, Loading } = useNewsContext();
 
-  useEffect(() => {
-    (async () => {
-      const data = await fetchNews();
-      setNews(data.articles);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const data = await fetchNews();
+  //     setNews(data.articles);
+  //   })();
+  // }, []);
 
-  if (Loading) return <Loader className={"w-fit m-auto py-32 mb-10"} />;
+  if (Loading) return <Loader className={"w-fit m-auto py-50 mb-10 "} />;
   return (
     <Wrapper>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap gap-5 justify-center">
         {News.map((news, index) => {
           if (!news.urlToImage) return null;
-          return <NewsCard key={index} NewsCards={new} />;
+          return <NewsCard key={index} NewsCards={news} />;
         })}
       </div>
     </Wrapper>
@@ -34,13 +34,13 @@ const NewsCard = ({ NewsCards }) => {
       <figure>
         <img src={NewsCards?.urlToImage} alt="Shoes" />
       </figure>
-      <div className="card-body">
+      <div className="card-body p-1 mt-1 items-start ">
         <h2 className="card-title">{NewsCards?.title}</h2>
         <p>{NewsCards?.description}</p>
         <div className="card-actions justify-end">
           <button
-            onChange={() => window.open(NewsCard.url)}
-            className="btn btn-primary"
+            onClick={() => window.open(NewsCard.url)}
+            className="badge badge-outline px-3 py-4 border-white/40 cursor-pointer "
           >
             Read More
           </button>

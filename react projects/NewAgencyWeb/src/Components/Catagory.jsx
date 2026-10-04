@@ -22,10 +22,10 @@ const Catagory = () => {
 
   return (
     <Wrapper>
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-4">
         {catagoreis.map((catagory) => {
           return (
-            <div key={catagory} className="py-4">
+            <div key={catagory} className="py-8">
               <button
                 onClick={HandleClick}
                 value={catagory}
