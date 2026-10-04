@@ -1,6 +1,15 @@
 import React from "react";
 import Wrapper from "./Wrapper";
+import { useNewsContext } from "../context/NewsContext";
 const Catagory = () => {
+  const { News, setNews, fetchNews } = useNewsContext();
+
+  const HandleClick = async (e) => {
+    const cat = e.target.value;
+    if (!cat) return;
+    const data = await fetchNews(`/everything?q=${cat}`);
+    setNews(data.articles);
+  };
   const catagoreis = [
     "business",
     "entertainment",
@@ -17,7 +26,13 @@ const Catagory = () => {
         {catagoreis.map((catagory) => {
           return (
             <div key={catagory} className="py-4">
-              <button className="btn btn-primary">{catagory}</button>
+              <button
+                onClick={HandleClick}
+                value={catagory}
+                className="btn btn-primary"
+              >
+                {catagory}
+              </button>
             </div>
           );
         })}
