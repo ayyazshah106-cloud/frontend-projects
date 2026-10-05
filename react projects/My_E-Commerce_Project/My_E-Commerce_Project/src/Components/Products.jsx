@@ -9,7 +9,7 @@ const Products = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    const res = await axios(`https://fakestoreapi.com/products`);
+    const res = await axios(`https://fakestoreapi.noksha.dev/api/products`);
     setproducts(res.data);
     setLoading(false);
   };
