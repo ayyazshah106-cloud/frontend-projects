@@ -1,13 +1,19 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Wrapper from "./Wrapper";
 import { useNewsContext } from "../context/NewsContext";
+import Cards from "./Cards";
 
+// outside the component so it doesnt reset on every render
 let debouncing = null;
 
 const NavBar = () => {
-  const { News, setNews, fetchNews } = useNewsContext();
+  // news for the sidebar (top headlines)
+  const [sideDetails, setsideDetails] = useState([]);
+  // grabbing these from context
+  const { setNews, fetchNews } = useNewsContext();
 
+  // runs when user types in the search box
   const handleClick = (e) => {
     const inputValue = e.target.value;
 
@@ -19,35 +25,46 @@ const NavBar = () => {
 
     // 1 second wait karega phir API call hogi
     debouncing = setTimeout(async () => {
+      // search news with whatever user typed
       const data = await fetchNews(`/everything?q=${inputValue}`);
 
+      // update the main news list
       setNews(data.articles);
     }, 1000);
   };
+
+  // refs to touch the sidebar and close button directly
   const sidebar = useRef();
   const Close = useRef();
-  // side bar data
-  const HandleClick = async () => {
-    const data = await fetchNews(`/everything?q=${popular}`);
-    setNews(data.articles);
-  };
 
-  const HandleSlideBar = () => {
+  // opens the sidebar
+  const handleSlideBar = () => {
     if (sidebar.current) {
       sidebar.current.style.display = "inline";
-      HandleClick();
     }
   };
+
+  // closes the sidebar (x button)
   const closeSideBar = () => {
     if (Close.current) {
       sidebar.current.style.display = "none";
     }
   };
+
+  // close sidebar if user clicks on the dark area outside
   const modal = (e) => {
     if (e.target === sidebar.current) {
       sidebar.current.style.display = "none";
     }
   };
+
+  // load top headlines once when page opens
+  useEffect(() => {
+    (async () => {
+      const data = await fetchNews("top-headlines?country=us&pageSize=20");
+      setsideDetails(data.articles);
+    })();
+  }, []);
 
   return (
     <div className="bg-base-200 my-4">
@@ -57,6 +74,7 @@ const NavBar = () => {
             <a className="btn btn-ghost text-xl">daisyUI</a>
           </div>
 
+          {/* search box */}
           <div className="flex gap-2">
             <input
               onChange={handleClick}
@@ -66,11 +84,12 @@ const NavBar = () => {
             />
           </div>
 
+          {/* bell button, opens the sidebar */}
           <button
-            onClick={HandleSlideBar}
-            className="z-10 btn btn-ghost btn-circle"
+            onClick={handleSlideBar}
+            className=" btn btn-ghost btn-circle"
           >
-            <div className="indicator">
+            <div className="indicator z-100 ">
               <svg
                 aria-label="Notifications"
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,46 +106,49 @@ const NavBar = () => {
                 />
               </svg>
 
-              <span className="badge badge-xs badge-primary indicator-item"></span>
+              {/* small badge with the count */}
+              <span className="badge badge-xs badge-primary indicator-item">
+                {sideDetails.length + 1}
+              </span>
             </div>
           </button>
         </div>
       </Wrapper>
 
+      {/* sidebar, hidden by default. dark bg covers the full screen */}
       <div
         onClick={modal}
         ref={sidebar}
-        className=" hidden w-full h-screen bg-tranperent fixed top-0 right-0"
+        className=" bg-black/70 hidden w-full h-screen fixed top-0 right-0 z-50 "
       >
-        <div className="w-3/5 h-screen bg-[#191919] absolute top-0 right-0 grid grid-rows-2 justify-center items-center ">
+        <div className="  w-3/5 flex flex-col flex-wrap gap-[18]  bg-[#191919] absolute top-0 right-0">
+          {/* close button */}
           <button
             onClick={closeSideBar}
             ref={Close}
-            className=" p-5 absolute top-0 left-0  cursor-pointer text-3xl"
+            className="w-full text-left p-5  cursor-pointer text-3xl"
           >
             x
           </button>
-          {News.map((news, index) => {
-            <div className="card-sm">
-              <div className="base-100 w-96 shadow-sm">
-                <figure>
-                  <img src={News?.urlToImage} alt="Shoes" />
-                </figure>
-                <div className="card-body p-1 mt-1 items-start ">
-                  <h2 className="card-title">{News?.title}</h2>
-                  <p>{NewsCards?.description}</p>
-                  <div className="card-actions justify-end">
-                    <button
-                      onClick={() => window.open(News.url)}
-                      className="badge badge-outline px-3 py-4 border-white/40 cursor-pointer "
-                    >
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>;
-          })}
+
+          {/* news cards list */}
+          <div className="w-full flex flex-wrap gap-3 justify-center items-center overflow-y-auto h-screen">
+            {sideDetails?.map((newsSideBar, index) =>
+              // skip the news that has no image
+              !newsSideBar.urlToImage ? null : (
+                <Cards
+                  key={index}
+                  details={newsSideBar}
+                  onImageError={() => {
+                    // image failed to load so remove this card from the list
+                    setsideDetails((prev) =>
+                      prev.filter((_, i) => i !== index),
+                    );
+                  }}
+                />
+              ),
+            )}
+          </div>
         </div>
       </div>
     </div>
