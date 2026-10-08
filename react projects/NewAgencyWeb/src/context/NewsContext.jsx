@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import api from "../config/axios"; // axios instance, base url is set there
+import axios from "axios";
 
 // context to share news stuff across the app
 const NewsContext = createContext();
@@ -14,8 +15,8 @@ const NewsContextProvider = ({ children }) => {
     setLoading(true); // start loader
     try {
       // adding the api key at the end of the url
-      const responce = await api.get(
-        `${url}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,
+      const responce = await axios(
+        "https://newsapi.org/v2/everything?q=bitcoin&apiKey=711997fc5820448cb47d57da4a35bfc2",
       );
       setLoading(false); // got the data, stop loader
       return responce.data; // send data back to whoever called this
