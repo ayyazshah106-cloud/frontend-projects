@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import api from "../config/axios"; // axios instance, base url is set there
+
 import axios from "axios";
 
 // context to share news stuff across the app
