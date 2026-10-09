@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What does CPU stand for?",
+    "options": ["Central Processing Unit", "Computer Personal Unit", "Central Power Unit", "Central Program Unit"],
+    "answer": "Central Processing Unit"
+  },
+  {
+    "question": "Which device is used to type text into a computer?",
+    "options": ["Monitor", "Keyboard", "Speaker", "Printer"],
+    "answer": "Keyboard"
+  },
+  {
+    "question": "What do we call a set of instructions given to a computer?",
+    "options": ["Hardware", "Program", "Mouse", "Screen"],
+    "answer": "Program"
+  },
+  {
+    "question": "Which of these is an output device?",
+    "options": ["Keyboard", "Mouse", "Monitor", "Scanner"],
+    "answer": "Monitor"
+  },
+  {
+    "question": "What does 'www' stand for?",
+    "options": ["World Wide Web", "World Web Wide", "Wide World Web", "Web World Wide"],
+    "answer": "World Wide Web"
+  },
+  {
+    "question": "Which of these is used to browse the internet?",
+    "options": ["MS Word", "Chrome", "Paint", "Calculator"],
+    "answer": "Chrome"
+  },
+  {
+    "question": "What is the full form of PC?",
+    "options": ["Personal Computer", "Public Computer", "Private Computer", "Process Computer"],
+    "answer": "Personal Computer"
+  },
+  {
+    "question": "Which key is used to create a new line in a document?",
+    "options": ["Shift", "Enter", "Tab", "Space"],
+    "answer": "Enter"
+  },
+  {
+    "question": "What do we call a computer program that finds and removes viruses?",
+    "options": ["Antivirus", "Browser", "Compiler", "Editor"],
+    "answer": "Antivirus"
+  },
+  {
+    "question": "Which of these stores data permanently in a computer?",
+    "options": ["RAM", "Hard Disk", "CPU Cache", "Monitor"],
+    "answer": "Hard Disk"
+  },
+  {
+    "question": "What is the short form of 'Application'?",
+    "options": ["App", "Apl", "Aplc", "Apn"],
+    "answer": "App"
+  },
+  {
+    "question": "Which symbol is used in an email address to separate the username and domain?",
+    "options": ["#", "@", "&", "%"],
+    "answer": "@"
+  },
+  {
+    "question": "What do we call the folder-like structure used to organize files?",
+    "options": ["Directory", "Program", "Browser", "Network"],
+    "answer": "Directory"
+  },
+  {
+    "question": "Which of these is a popular search engine?",
+    "options": ["Google", "Windows", "Excel", "Photoshop"],
+    "answer": "Google"
+  },
+  {
+    "question": "What does 'save' do in a computer program?",
+    "options": ["Deletes a file", "Stores your work", "Prints a file", "Closes the app"],
+    "answer": "Stores your work"
+  },
+  {
+    "question": "Which of these is used to copy text (shortcut key)?",
+    "options": ["Ctrl + C", "Ctrl + P", "Ctrl + X", "Ctrl + Z"],
+    "answer": "Ctrl + C"
+  },
+  {
+    "question": "What is a computer virus?",
+    "options": ["A type of hardware", "A harmful program", "A search engine", "An input device"],
+    "answer": "A harmful program"
+  },
+  {
+    "question": "Which of these is used to connect to the internet?",
+    "options": ["Wi-Fi", "Speaker", "Mouse", "Keyboard"],
+    "answer": "Wi-Fi"
+  },
+  {
+    "question": "What does 'delete' do to a file?",
+    "options": ["Saves it", "Removes it", "Opens it", "Copies it"],
+    "answer": "Removes it"
+  },
+  {
+    "question": "Which of these is a social media platform?",
+    "options": ["Facebook", "Windows", "Notepad", "Calculator"],
+    "answer": "Facebook"
+  }
+]

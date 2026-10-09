@@ -1,0 +1,30 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+const Nav = () => {
+  return (
+    <>
+      <div className="flex  bg-gray-700 items-center py-3 px-8 gap-16">
+        <img className="w-15" src="/logo.png" alt="" />
+
+        <div className=" text-2xl flex gap-7 font-bold text-white ">
+          <Menu to="/Home" title="Home" />
+          <Menu to="/Products" title="Products" />
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Menu = ({ to, title }) => {
+  return (
+    <NavLink
+      className={({ isActive }) => (isActive ? "text-amber-800" : "")}
+      to={to}
+    >
+      {title}
+    </NavLink>
+  );
+};
+
+export default Nav;
